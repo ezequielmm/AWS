@@ -1,0 +1,15 @@
+﻿<ResourceDictionary x:Uid="DataServiceDictionary"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clr="clr-namespace:System;assembly=mscorlib">
+   <clr:String x:Key="Icon">Icon</clr:String>
+   <clr:String x:Key="FeatureName">Feature Name</clr:String>
+   <clr:String x:Key="CharacteristicName">Characteristic Name</clr:String>
+   <clr:String x:Key="CharacteristicType">Characteristic Type</clr:String>
+   <clr:String x:Key="CharacteristicNominal">Nominal</clr:String>
+   <clr:String x:Key="UpperTolerance">Upper Tolerance</clr:String>
+   <clr:String x:Key="LowerTolerance">Lower Tolerance</clr:String>
+   <clr:String x:Key="Measured">Measured</clr:String>
+   <clr:String x:Key="ToleranceGraphic">Tolerance Graphic</clr:String>
+   <clr:String x:Key="CharacteristicStatus">Status</clr:String>
+</ResourceDictionary>

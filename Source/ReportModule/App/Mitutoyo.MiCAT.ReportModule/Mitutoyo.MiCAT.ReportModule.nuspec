@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Mitutoyo.MiCAT.ReportModule</id>
+    <version>20.0.11</version>
+    <authors>Mitutoyo Europe GmbH</authors>
+    <owners>Mitutoyo Europe GmbH</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>http://euclid.microen.local:8080/tfs/MiCAT/</projectUrl>
+    <description>Report Module</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright © Mitutoyo 2019</copyright>
+    <tags>ReportModule</tags>
+    <repository type="Git" url="http://euclid.microen.local:8080/tfs/micat/MiCAT/Ocre/_git/Mitutoyo.MiCAT.Reporting" />
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="AutoMapper" version="7.0.1" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.ApplicationState" version="11.3.0" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.ApplicationState.Common" version="11.3.0" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.ApplicationState.SnapShots" version="11.3.0" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.Common" version="13.4.2" exclude="Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.Core.StdLib" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.DataServiceClient" version="11.9.0" exclude="Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.Migration.Core" version="1.9.0" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.ReportModuleConnector" version="0.1.0" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.ShellModule" version="10.0.2" exclude="Build,Analyzers" />
+        <dependency id="Mitutoyo.MiCAT.Utilities.IoC" version="7.1.0" exclude="Build,Analyzers" />
+        <dependency id="Prism.Core" version="7.2.0.1367" exclude="Build,Analyzers" />
+        <dependency id="Prism.Unity" version="7.2.0.1367" exclude="Build,Analyzers" />
+        <dependency id="Prism.Wpf" version="7.2.0.1367" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.Immutable" version="1.5.0" exclude="Build,Analyzers" />
+        <dependency id="Telerik.Windows.Controls.for.Wpf.Xaml" version="2020.3.1020" exclude="Build,Analyzers" />
+        <dependency id="Telerik.Windows.Controls.GridView.for.Wpf.Xaml" version="2020.3.1020" exclude="Build,Analyzers" />
+        <dependency id="Telerik.Windows.Controls.RichTextBox.for.Wpf.Xaml" version="2020.3.1020" exclude="Build,Analyzers" />
+        <dependency id="Telerik.Windows.Documents.Core" version="2020.3.1019" exclude="Build,Analyzers" />
+        <dependency id="Telerik.Windows.Documents.Fixed" version="2020.3.1019" exclude="Build,Analyzers" />
+        <dependency id="Unity" version="5.10.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/any/Mitutoyo.MiCAT.ReportModule.Setup.dll.config" buildAction="Content" copyToOutput="true" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\net5.0-windows\Mitutoyo.MiCAT.ReportModule.Setup.dll.config" target="contentFiles\any\any" />
+    <file src="bin\$configuration$\net5.0-windows\Mitutoyo.MiCAT.ReportModule*.dll" target="lib\net5.0" />
+    <file src="bin\$configuration$\net5.0-windows\Mitutoyo.MiCAT.ReportModule*.pdb" target="lib\net5.0" />
+    <file src="bin\$configuration$\net5.0-windows\Telerik.*.dll" target="lib\net5.0" />
+  </files>
+</package>

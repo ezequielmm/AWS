@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <DrawingGroup x:Key="SearchDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<!-- Layer 1/<Compound Path> -->
+               <GeometryDrawing Brush="{StaticResource NeutralDarkSecondaryAltBrush}" Geometry="F1 M 0.544,4.911 C 0.545,7.343 2.499,9.308 4.911,9.309 C 7.342,9.309 9.309,7.355 9.310,4.937 C 9.311,2.492 7.351,0.536 4.907,0.543 C 2.496,0.552 0.542,2.508 0.544,4.911 M 14.000,13.595 C 13.856,13.732 13.735,13.848 13.599,13.976 C 11.803,12.181 10.022,10.397 8.223,8.599 C 6.965,9.660 5.540,10.062 3.947,9.755 C 2.723,9.515 1.733,8.866 0.976,7.869 C -0.509,5.917 -0.274,3.071 1.512,1.371 C 3.341,-0.369 6.133,-0.460 8.081,1.137 C 9.922,2.641 10.673,5.778 8.624,8.221 C 10.407,10.002 12.191,11.785 14.000,13.595" />
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="SearchDrawingImage" Drawing="{StaticResource SearchDrawingGroup}" />
+</ResourceDictionary>

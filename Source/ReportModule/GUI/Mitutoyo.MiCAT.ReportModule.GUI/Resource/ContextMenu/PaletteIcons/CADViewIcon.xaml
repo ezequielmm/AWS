@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<DrawingGroup x:Key="CADViewDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Compound Path> -->
+							<GeometryDrawing Brush="#ff434343" Geometry="F1 M 7.091,0.000 L 0.815,0.000 C 0.372,0.000 0.009,0.363 0.009,0.807 L 0.009,6.874 L 0.000,6.917 L 0.000,13.193 C 0.000,13.637 0.363,14.000 0.807,14.000 L 9.862,14.000 L 10.810,14.000 L 13.151,14.000 C 13.596,14.000 13.958,13.637 13.958,13.193 L 13.958,10.820 L 13.958,9.896 L 13.958,6.917 C 13.958,6.473 13.596,6.110 13.151,6.110 L 7.898,6.110 L 7.898,0.807 C 7.898,0.363 7.535,0.000 7.091,0.000 Z M 7.091,0.642 L 7.257,0.807 L 7.257,6.110 L 7.257,6.752 L 7.898,6.752 L 13.151,6.752 L 13.316,6.917 L 13.316,9.896 L 13.316,10.820 L 13.316,13.193 L 13.151,13.358 L 10.810,13.358 L 9.862,13.358 L 0.807,13.358 L 0.642,13.193 L 0.642,6.998 L 0.645,6.985 L 0.649,6.909 L 0.650,6.892 L 0.650,6.874 L 0.650,0.807 L 0.815,0.642 L 7.091,0.642" />
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="CADViewDrawingImage" Drawing="{StaticResource CADViewDrawingGroup}" />
+</ResourceDictionary>

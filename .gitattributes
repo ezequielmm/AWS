@@ -1,0 +1,20 @@
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+#*.cs      text eol=crlf
+#*.xaml    text eol=crlf
+#*.json    text eol=crlf
+#*.nuspec  text eol=crlf
+
+###############################################################################
+# behavior for image files
+#
+# image files are treated as binary by default.
+###############################################################################
+*.jpg   binary
+*.png   binary
+*.gif   binary
+*.cur   binary
+

@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="ContextMenu/Delete.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/CADViewIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/CharacteristicTableIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/ChartIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/FeatureTableIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/HeaderFormIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/ImageIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/MeasurementTableIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/PlotIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/ShapesIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/TableIcon.xaml"/>
+      <ResourceDictionary Source="ContextMenu/PaletteIcons/TextboxIcon.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

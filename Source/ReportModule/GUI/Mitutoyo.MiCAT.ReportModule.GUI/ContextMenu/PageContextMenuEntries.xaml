@@ -1,0 +1,119 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:contextMenu="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.ContextMenu">
+
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="ContextMenuItemBasicStyle.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <Style TargetType="{x:Type telerik:RadContextMenu}" BasedOn="{StaticResource ContextMenuStyle}" x:Key="ContextMenuStyleWithOutVerticalSeparator">
+      <Setter Property="Background" Value="#f2f2f2"/>
+      <Setter Property="Width" Value="205"/>
+      <Setter Property="FontFamily" Value="Segoe UI"/>
+      <Setter Property="FontSize" Value="11"/>
+      <Setter Property="BorderBrush" Value="#aaa9a9"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Padding" Value="0,0,0,0"/>
+      <Setter Property="IconColumnWidth" Value="0"/>
+      <Setter Property="InheritDataContext" Value="False"/>
+      <Style.Triggers>
+         <Trigger Property="HasItems" Value="False">
+            <Setter Property="Visibility" Value="Collapsed" />
+         </Trigger>
+      </Style.Triggers>
+   </Style>
+
+   <Style TargetType="{x:Type telerik:RadMenuItem}" BasedOn="{StaticResource ContextMenuItemBasicStyle}"
+          x:Key="ContextMenuItemStyle">
+      <Setter Property="IsSeparator" Value="{Binding IsSeparator}"/>
+      <Setter Property="Header" Value="{Binding Text}"/>
+      <Setter Property="ItemsSource" Value="{Binding SubItems}"/>
+      <Setter Property="Command" Value="{Binding Command}"/>
+      <Style.Triggers>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.CadView}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource CADViewDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.CharacteristicTable}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource CharacteristicTableDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.Chart}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource ChartDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.FeatureTable}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource FeatureTableDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.HeaderForm}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource HeaderFormDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.Image}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource ImageDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.MeasurementTable}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource MeasurementTableDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.Plot}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource PlotDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.Shapes}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource ShapesDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.Table}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource TableDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IconName}" Value="{x:Static contextMenu:ContextMenuItemIcon.Textbox}">
+            <Setter Property="Icon">
+               <Setter.Value>
+                  <Image Source="{StaticResource TextboxDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+      </Style.Triggers>
+   </Style>
+
+   <contextMenu:RadContextMenuXamlHolder x:Key="RadContextMenuContent" >
+      <telerik:RadContextMenu ItemsSource="{Binding ContextMenu.Items}" Style="{StaticResource ContextMenuStyleWithOutVerticalSeparator}" ItemContainerStyle="{StaticResource ContextMenuItemStyle}">
+   </telerik:RadContextMenu>
+   </contextMenu:RadContextMenuXamlHolder>
+
+</ResourceDictionary>

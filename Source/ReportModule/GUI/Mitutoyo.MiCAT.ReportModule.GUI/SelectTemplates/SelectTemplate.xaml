@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.SelectTemplates.SelectTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:properties="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+             xmlns:controls="clr-namespace:Mitutoyo.MiCAT.Common.GUI.Controls;assembly=Mitutoyo.MiCAT.Common.GUI"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Fonts.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/tileviewstyle.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/Mitutoyo.MiCAT.ReportModule.GUI;component/SelectTemplates/TemplateTileIcon.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Dialogs/ConfirmDialogStyle.xaml" />
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/Mitutoyo.MiCAT.ReportModule.GUI;component/SelectTemplates/SelectTemplateStyles.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/styles/buttonwithtextandimagestyle.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+
+         <DataTemplate x:Key="ReportTemplateTileViewContentTemplate">
+            <Grid>
+               <Image Source="{StaticResource TemplateTileIconDrawingImage}" Width="70" Height="70" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+         </DataTemplate>
+         <Style x:Key="ReportTemplateRadTileViewItemStyle" TargetType="telerik:RadTileViewItem" BasedOn="{StaticResource MicatRadTileViewItemStyle}"/>
+         <DataTemplate x:Key="ReportTemplateTileViewItemHeaderTemplate">
+            <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" ToolTip="{Binding Name}" />
+         </DataTemplate>
+         <telerik:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+      </ResourceDictionary>
+   </UserControl.Resources>
+   <Grid Margin="0 0 20 0">
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="Auto"></ColumnDefinition>
+         <ColumnDefinition Width="*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto"></RowDefinition>
+         <RowDefinition Height="Auto"></RowDefinition>
+         <RowDefinition Height="Auto"></RowDefinition>
+         <RowDefinition Height="*"></RowDefinition>
+         <RowDefinition Height="Auto"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Border Grid.Column="0" Grid.RowSpan="5" Style="{StaticResource VerticalSeparatorStyle}" />
+
+      <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource TitleLabelStyle}" Margin="12" Content="{Binding Title}" ></Label>
+      <Grid Grid.Row="1" Grid.Column="1" Margin="13 4 5 4">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+         </Grid.ColumnDefinitions>
+         <Label Grid.Column="0" Content="{Binding TemplatesCountLabel}" FontSize="12" HorizontalAlignment="Left" FontWeight="Bold" AutomationProperties.AutomationId="TemplatesCountLabel" />
+         <controls:ButtonWithTextAndImage 
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            Style="{StaticResource ButtonWithTextAndImageStyle}"
+            Image="{StaticResource DeleteDrawingImage}"
+            Text="{x:Static properties:Resources.DeleteTemplateLabel}"
+            IsEnabled="{Binding IsOneSelected}"
+            Command="{Binding DeleteSelectedTemplateCommand}"/>
+      </Grid>
+
+      <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource HorizontalSeparatorStyle}"/>
+      
+      <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" KeyboardNavigation.IsTabStop="False" HorizontalAlignment="Stretch" Margin="18,15,0,0">
+         <telerik:RadTileView
+         x:Name="RadTileList"
+         ItemsSource="{Binding ReportTemplates}"
+         VerticalAlignment="Top"
+         MaximizeMode="Zero"
+         SelectionMode="Single"
+         IsVirtualizing="True"
+         IsSelectionEnabled="True"
+         SelectedItem="{Binding SelectedTemplate, Mode=TwoWay}"
+         IsItemDraggingEnabled="False"
+         ColumnWidth="145"
+         RowHeight="145"
+         ItemTemplate="{StaticResource ReportTemplateTileViewItemHeaderTemplate}"
+         HeaderStyle="{StaticResource MicatTileViewItemHeaderStyle}"
+         ContentTemplate="{StaticResource ReportTemplateTileViewContentTemplate}" 
+         ItemContainerStyle="{StaticResource ReportTemplateRadTileViewItemStyle}"
+         Style="{StaticResource MicatRadTileViewStyle}"
+         KeyboardNavigation.IsTabStop="False"
+         KeyboardNavigation.TabNavigation="Once">
+
+            <i:Interaction.Triggers>
+               <i:EventTrigger EventName="SelectionChanged">
+                  <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding ElementName=RadTileList}"/>
+               </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <telerik:RadTileView.InputBindings>
+               <KeyBinding Key="Delete" Command="{Binding DeleteSpecificTemplateCommand}" CommandParameter="{Binding SelectedTemplate}" />
+            </telerik:RadTileView.InputBindings>
+         </telerik:RadTileView>
+      </Grid>
+
+      <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Center" Margin="0 20">
+         <Button
+            MinWidth="70"
+            Width="Auto"
+            Height="33"
+            Command="{Binding SelectCommand}"
+            CommandParameter="{Binding ElementName=RadTileList, Path=SelectedItem.Id}"
+            IsEnabled="{Binding IsOneSelected}"
+            Style="{StaticResource OkButtonStyle}">
+            <TextBlock Text="{Binding ProceedButtonText}"
+                       Foreground="White"
+                       Padding="8,0,8,0"
+                       Width="Auto"/>
+         </Button>
+      </StackPanel>
+   </Grid>
+</UserControl>

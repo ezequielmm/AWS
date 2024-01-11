@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <DrawingGroup x:Key="TglBtnEditOnDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Compound Path> -->
+                     <GeometryDrawing Brush="{StaticResource NeutralDarkBrush}" Geometry="F1 M 23.909,0.000 C 16.747,0.000 9.585,0.000 2.423,0.000 C 0.652,0.000 0.003,0.664 0.003,2.470 C 0.003,6.186 0.010,9.900 0.000,13.615 C -0.005,15.531 0.418,15.981 2.312,15.982 C 6.408,15.983 21.551,16.000 31.484,16.000 C 36.609,16.000 40.347,15.996 40.465,15.982 C 41.552,15.854 42.108,15.196 42.111,14.108 C 42.119,10.257 42.124,6.407 42.117,2.556 C 42.114,0.775 41.314,0.000 39.521,0.000 C 34.317,0.000 29.113,0.000 23.909,0.000 Z M 23.909,0.500 L 39.521,0.500 C 41.046,0.500 41.615,1.058 41.617,2.557 C 41.624,6.407 41.619,10.257 41.611,14.107 C 41.609,14.950 41.227,15.388 40.428,15.483 C 40.280,15.491 38.609,15.500 31.484,15.500 C 24.989,15.500 16.266,15.493 9.861,15.487 L 2.312,15.482 C 1.473,15.481 1.023,15.389 0.808,15.174 C 0.590,14.955 0.498,14.489 0.500,13.617 C 0.507,10.955 0.505,8.293 0.504,5.631 L 0.503,2.470 C 0.503,1.685 0.631,1.188 0.906,0.908 C 1.178,0.630 1.660,0.500 2.423,0.500 L 23.909,0.500" />
+							<!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Brush="{StaticResource OrangeBrush}" Geometry="F1 M 31.934,3.414 C 33.749,3.414 35.565,3.433 37.380,3.404 C 38.012,3.394 38.218,3.626 38.212,4.249 C 38.187,6.698 38.188,9.148 38.211,11.598 C 38.217,12.200 37.993,12.406 37.405,12.403 C 33.774,12.389 30.144,12.389 26.513,12.403 C 25.923,12.405 25.701,12.185 25.706,11.589 C 25.726,9.118 25.724,6.646 25.707,4.175 C 25.703,3.606 25.928,3.400 26.488,3.407 C 28.303,3.426 30.119,3.414 31.934,3.414 Z" />
+							<!-- Layer 1/<Group>/<Compound Path> -->
+                     <GeometryDrawing Brush="{StaticResource NeutralDarkBrush}" Geometry="F1 M 15.903,3.403 C 14.493,4.822 13.161,6.252 11.730,7.574 C 10.676,8.547 10.604,9.859 10.202,11.131 C 11.210,10.884 12.325,10.761 13.029,10.158 C 14.736,8.697 16.252,7.011 17.887,5.374 C 17.220,4.711 16.601,4.097 15.903,3.403 Z M 15.908,4.466 L 16.827,5.378 C 16.534,5.678 16.243,5.978 15.953,6.276 C 14.809,7.457 13.729,8.572 12.541,9.589 C 12.235,9.851 11.771,10.002 11.248,10.128 C 11.451,9.338 11.666,8.653 12.238,8.125 C 13.252,7.188 14.232,6.184 15.179,5.211 C 15.421,4.963 15.664,4.715 15.908,4.466" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Geometry="F1 M 7.786,12.403 L 14.789,12.403">
+								<GeometryDrawing.Pen>
+                           <Pen DashCap="Flat" Thickness="0.8" Brush="{StaticResource NeutralDarkBrush}" MiterLimit="1.0" />
+								</GeometryDrawing.Pen>
+							</GeometryDrawing>
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+   <DrawingImage x:Key="TglBtnEditOnDrawingImage" Drawing="{StaticResource TglBtnEditOnDrawingGroup}" />
+</ResourceDictionary>

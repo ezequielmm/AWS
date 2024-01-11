@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/ExportIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/GetDataIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/RefreshIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/FilterIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/FormatIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/TableIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/ImageIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/PlotIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/CADIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/TextIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/ShapeIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/FooterDisabledIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/FooterIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/HeaderDisabledIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/HeaderIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/CancelIcon.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ActionBarIcons/SaveIcon.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

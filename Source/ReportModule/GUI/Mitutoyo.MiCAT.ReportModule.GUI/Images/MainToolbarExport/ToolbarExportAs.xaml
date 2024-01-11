@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <DrawingGroup x:Key="Export AsDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 15.072,4.492 C 15.188,4.492 15.281,4.585 15.281,4.701 L 15.281,23.277 C 15.281,23.392 15.188,23.486 15.072,23.486 L 0.740,23.486 C 0.625,23.486 0.531,23.392 0.531,23.277 L 0.531,4.701 C 0.531,4.585 0.625,4.492 0.740,4.492 L 15.072,4.492" />
+							<DrawingGroup>
+								<DrawingGroup.Children>
+									<DrawingGroup>
+										<DrawingGroup.Children>
+											<!-- Layer 1/<Group>/<Group>/<Group>/<Path> -->
+                                 <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 6.883,0.159 L 18.946,0.145 C 19.350,0.145 19.677,0.472 19.677,0.876 L 19.677,11.067 L 19.263,13.091 L 19.263,19.335 C 19.263,19.739 19.612,20.183 19.208,20.183 L 16.841,20.183 L 4.614,20.183 C 4.210,20.183 3.883,19.856 3.883,19.452 L 3.883,11.765 L 6.883,8.608 L 6.883,5.676 L 6.883,1.483 L 6.883,0.159 Z" />
+											<!-- Layer 1/<Group>/<Group>/<Group>/<Compound Path> -->
+                                 <GeometryDrawing Brush="{StaticResource BlackBrush}" Geometry="F1 M 15.063,3.962 L 0.731,3.962 C 0.327,3.962 0.000,4.289 0.000,4.693 L 0.000,23.269 C 0.000,23.673 0.327,24.000 0.731,24.000 L 15.063,24.000 C 15.467,24.000 15.794,23.673 15.794,23.269 L 15.794,4.693 C 15.794,4.289 15.467,3.962 15.063,3.962 Z M 15.063,4.484 C 15.179,4.484 15.272,4.578 15.272,4.693 L 15.272,23.269 C 15.272,23.384 15.179,23.478 15.063,23.478 L 0.731,23.478 C 0.616,23.478 0.522,23.384 0.522,23.269 L 0.522,4.693 C 0.522,4.578 0.616,4.484 0.731,4.484 L 15.063,4.484" />
+											<!-- Layer 1/<Group>/<Group>/<Group>/<Path> -->
+                                 <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 16.456,20.285 L 4.393,20.299 C 3.989,20.299 3.662,19.972 3.662,19.568 L 3.662,0.992 C 3.662,0.588 3.989,0.261 4.393,0.261 L 18.725,0.261 C 19.129,0.261 19.456,0.588 19.456,0.992 L 19.456,8.679 L 16.456,11.836 L 16.456,14.768 L 16.456,18.961 L 16.456,20.285 Z" />
+											<!-- Layer 1/<Group>/<Group>/<Group>/<Path> -->
+                                 <GeometryDrawing Brush="{StaticResource BlackBrush}" Geometry="F1 M 16.442,20.038 L 4.393,20.038 C 4.133,20.037 3.923,19.828 3.923,19.568 L 3.923,0.992 C 3.923,0.732 4.133,0.522 4.393,0.522 L 18.725,0.522 C 18.985,0.522 19.195,0.732 19.195,0.992 L 19.195,8.679 L 19.717,8.679 L 19.717,0.992 C 19.717,0.444 19.273,0.000 18.725,0.000 L 4.393,0.000 C 3.845,0.000 3.401,0.444 3.401,0.992 L 3.401,19.568 C 3.401,20.116 3.845,20.560 4.393,20.560 L 16.442,20.560 L 16.442,20.038 L 16.442,20.038 Z" />
+											<DrawingGroup>
+												<DrawingGroup.Children>
+													<!-- Layer 1/<Group>/<Group>/<Group>/<Group>/<Path> -->
+													<GeometryDrawing Brush="#ff30373d" Geometry="F1 M 8.976,7.976 L 8.714,7.976 C 8.387,7.976 8.121,7.710 8.121,7.382 L 8.121,6.516 C 8.121,6.187 8.387,5.922 8.714,5.922 L 8.976,5.922 C 9.304,5.922 9.570,6.187 9.570,6.516 L 9.570,7.382 C 9.570,7.710 9.304,7.976 8.976,7.976 Z" />
+													<!-- Layer 1/<Group>/<Group>/<Group>/<Group>/<Path> -->
+													<GeometryDrawing Brush="#ff30373d" Geometry="F1 M 11.420,7.976 L 11.380,7.976 C 10.991,7.976 10.676,7.661 10.676,7.272 L 10.676,5.233 C 10.676,4.844 10.991,4.529 11.380,4.529 L 11.420,4.529 C 11.809,4.529 12.124,4.844 12.124,5.233 L 12.124,7.272 C 12.124,7.661 11.809,7.976 11.420,7.976 Z" />
+													<!-- Layer 1/<Group>/<Group>/<Group>/<Group>/<Path> -->
+													<GeometryDrawing Brush="#ff30373d" Geometry="F1 M 13.994,7.976 L 13.915,7.976 C 13.537,7.976 13.230,7.669 13.230,7.291 L 13.230,4.289 C 13.230,3.911 13.537,3.604 13.915,3.604 L 13.994,3.604 C 14.372,3.604 14.679,3.911 14.679,4.289 L 14.679,7.291 C 14.679,7.669 14.372,7.976 13.994,7.976 Z" />
+													<!-- Layer 1/<Group>/<Group>/<Group>/<Group>/<Path> -->
+													<GeometryDrawing Brush="#ffea5e26" Geometry="F1 M 15.785,12.493 L 7.331,12.493 C 7.011,12.493 6.752,12.234 6.752,11.914 C 6.752,11.594 7.011,11.334 7.331,11.334 L 15.785,11.334 C 16.105,11.334 16.364,11.594 16.364,11.914 C 16.364,12.234 16.105,12.493 15.785,12.493 Z" />
+													<!-- Layer 1/<Group>/<Group>/<Group>/<Group>/<Path> -->
+													<GeometryDrawing Brush="#ffea5e26" Geometry="F1 M 13.274,15.259 L 7.331,15.259 C 7.011,15.259 6.752,15.518 6.752,15.838 C 6.752,16.158 7.011,16.417 7.331,16.417 L 13.274,16.417 L 13.274,15.259 Z" />
+												</DrawingGroup.Children>
+											</DrawingGroup>
+										</DrawingGroup.Children>
+									</DrawingGroup>
+									<DrawingGroup>
+										<DrawingGroup.Children>
+											<!-- Layer 1/<Group>/<Group>/<Group>/<Path> -->
+											<GeometryDrawing Brush="#ff226ab4" Geometry="F1 M 20.515,23.498 L 20.515,11.989 L 19.210,11.989 L 19.210,23.498" />
+											<!-- Layer 1/<Group>/<Group>/<Group>/<Path> -->
+											<GeometryDrawing Brush="#ff226ab4" Geometry="F1 M 23.973,15.319 L 23.236,16.003 L 19.864,12.375 L 16.490,16.003 L 15.754,15.319 L 19.864,10.899 L 23.973,15.319 Z" />
+										</DrawingGroup.Children>
+									</DrawingGroup>
+								</DrawingGroup.Children>
+							</DrawingGroup>
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="Export AsDrawingImage" Drawing="{StaticResource Export AsDrawingGroup}" />
+</ResourceDictionary>

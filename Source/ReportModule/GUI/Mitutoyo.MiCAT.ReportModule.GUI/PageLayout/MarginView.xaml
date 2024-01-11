@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.PageLayout.MarginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.MainWindow"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+   <UserControl.Resources>
+      <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+   </UserControl.Resources>
+   <Line Visibility="{Binding ReportModeProperty.IsEditMode, Converter={StaticResource BoolToVisibility}}" StrokeThickness="1" Stroke="#f47938" StrokeDashArray="1 1" X1="0" Y1="{Binding Position, Mode=OneTime}" X2="{Binding  Width, Mode=OneTime}" Y2="{Binding Position, Mode=OneTime}"></Line>
+</UserControl>

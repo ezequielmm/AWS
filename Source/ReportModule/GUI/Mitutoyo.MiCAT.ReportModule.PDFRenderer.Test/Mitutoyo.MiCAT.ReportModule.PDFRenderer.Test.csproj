@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <Version>20.0.11</Version>
+    <AssemblyVersion>20.0.0</AssemblyVersion>
+    <FileVersion>20.0.11</FileVersion>
+    <Platforms>x64</Platforms>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugType>full</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Mitutoyo.MiCAT.ReportModule.Domain\Mitutoyo.MiCAT.ReportModule.Domain.csproj" />
+    <ProjectReference Include="..\Mitutoyo.MiCAT.ReportModule.PDFRenderer\Mitutoyo.MiCAT.ReportModule.PDFRenderer.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Mitutoyo.MiCAT.Style" Version="3.0.1" PrivateAssets="all" />
+    <PackageReference Include="Moq" Version="4.16.0" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Telerik.Windows.Controls.for.Wpf.Xaml" Version="2020.3.1020" />
+    <PackageReference Include="Telerik.Windows.Controls.RichTextBox.for.Wpf.Xaml" Version="2020.3.1020" />
+    <PackageReference Include="Telerik.Windows.Documents.Fixed" Version="2020.3.1019" />
+  </ItemGroup>
+</Project>

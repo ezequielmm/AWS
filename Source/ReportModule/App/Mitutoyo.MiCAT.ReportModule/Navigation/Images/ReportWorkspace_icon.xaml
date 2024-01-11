@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <DrawingGroup x:Key="ReportWorkspace_iconDrawingGroup">
+      <DrawingGroup.Children>
+         <DrawingGroup>
+            <DrawingGroup.Children>
+               <!-- Layer 1/<Rectangle> -->
+               <GeometryDrawing Geometry="F1 M 0.000,16.000 L 16.000,16.000 L 16.000,0.000 L 0.000,0.000 L 0.000,16.000 Z" />
+               <DrawingGroup>
+                  <DrawingGroup.Children>
+                     <!-- Layer 1/<Group>/<Compound Path> -->
+                     <DrawingGroup Opacity="0.7">
+                        <DrawingGroup.Children>
+                           <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 10.867,3.417 C 11.341,3.417 11.802,3.417 12.200,3.417 C 11.768,2.981 11.313,2.524 10.867,2.075 C 10.867,2.498 10.867,2.952 10.867,3.417 Z M 3.445,1.156 C 3.559,1.156 3.663,1.156 3.767,1.156 C 6.051,1.156 8.335,1.147 10.618,1.156 C 10.749,1.157 10.910,1.224 11.004,1.315 C 11.652,1.943 12.282,2.591 12.928,3.221 C 13.079,3.369 13.142,3.517 13.142,3.730 C 13.135,7.129 13.137,10.528 13.137,13.928 C 13.137,14.039 13.137,14.150 13.137,14.261 C 13.349,14.261 13.520,14.261 13.686,14.261 C 13.686,9.693 13.686,5.147 13.686,0.589 C 10.266,0.589 6.862,0.589 3.445,0.589 C 3.445,0.777 3.445,0.956 3.445,1.156 Z M 12.560,4.010 C 12.119,4.010 11.704,4.010 11.289,4.010 C 10.381,4.010 10.285,3.915 10.285,3.008 C 10.285,2.586 10.285,2.164 10.285,1.749 C 7.596,1.749 4.946,1.749 2.299,1.749 C 2.299,6.318 2.299,10.864 2.299,15.411 C 5.730,15.411 9.142,15.411 12.560,15.411 C 12.560,11.610 12.560,7.831 12.560,4.010 Z M 13.136,14.858 C 13.136,15.074 13.144,15.251 13.134,15.427 C 13.114,15.770 12.902,15.976 12.557,15.998 C 12.478,16.003 5.765,15.998 2.489,15.998 C 1.904,15.998 1.713,15.810 1.713,15.222 C 1.712,10.812 1.713,6.402 1.713,1.992 C 1.713,1.318 1.882,1.151 2.563,1.149 C 2.650,1.149 2.737,1.149 2.855,1.149 C 2.855,0.975 2.853,0.819 2.856,0.662 C 2.864,0.247 3.076,0.029 3.492,0.008 C 3.563,0.005 3.634,0.007 3.705,0.007 C 6.964,0.007 10.222,0.013 13.481,0.000 C 13.987,-0.002 14.289,0.209 14.287,0.816 C 14.272,5.235 14.273,9.654 14.287,14.072 C 14.289,14.600 14.037,14.915 13.487,14.859 C 13.383,14.849 13.278,14.858 13.136,14.858 Z" />
+                        </DrawingGroup.Children>
+                     </DrawingGroup>
+                     <!-- Layer 1/<Group>/<Compound Path> -->
+                     <DrawingGroup Opacity="0.7">
+                        <DrawingGroup.Children>
+                           <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 9.685,5.716 C 8.940,5.716 8.193,5.716 7.417,5.716 C 7.417,4.941 7.417,4.194 7.417,3.448 C 6.181,3.421 5.127,4.506 5.142,5.758 C 5.158,7.049 6.288,8.081 7.597,8.000 C 8.750,7.929 9.789,6.809 9.685,5.716 Z M 10.285,5.711 C 10.293,7.270 9.001,8.571 7.436,8.579 C 5.875,8.587 4.580,7.299 4.569,5.730 C 4.558,4.170 5.843,2.877 7.417,2.863 C 8.975,2.849 10.276,4.142 10.285,5.711 Z" />
+                        </DrawingGroup.Children>
+                     </DrawingGroup>
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <DrawingGroup Opacity="0.7">
+                        <DrawingGroup.Children>
+                           <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 7.423,13.282 C 6.263,13.282 5.104,13.282 3.944,13.282 C 3.873,13.282 3.802,13.283 3.731,13.280 C 3.555,13.275 3.443,13.189 3.440,13.007 C 3.437,12.823 3.553,12.739 3.725,12.724 C 3.805,12.717 3.885,12.716 3.964,12.716 C 6.283,12.715 8.603,12.715 10.922,12.715 C 10.966,12.715 11.011,12.715 11.055,12.716 C 11.248,12.725 11.419,12.774 11.410,13.012 C 11.401,13.249 11.229,13.283 11.035,13.283 C 9.831,13.282 8.627,13.282 7.423,13.282 Z" />
+                        </DrawingGroup.Children>
+                     </DrawingGroup>
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <DrawingGroup Opacity="0.7">
+                        <DrawingGroup.Children>
+                           <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 7.423,10.871 C 6.263,10.871 5.104,10.871 3.944,10.871 C 3.873,10.871 3.802,10.871 3.731,10.868 C 3.555,10.863 3.443,10.777 3.440,10.595 C 3.437,10.411 3.553,10.327 3.725,10.312 C 3.805,10.306 3.885,10.304 3.964,10.304 C 6.283,10.303 8.603,10.304 10.922,10.304 C 10.966,10.304 11.011,10.303 11.055,10.305 C 11.248,10.313 11.419,10.362 11.410,10.600 C 11.401,10.837 11.229,10.872 11.035,10.871 C 9.831,10.870 8.627,10.871 7.423,10.871 Z" />
+                        </DrawingGroup.Children>
+                     </DrawingGroup>
+                  </DrawingGroup.Children>
+               </DrawingGroup>
+            </DrawingGroup.Children>
+         </DrawingGroup>
+      </DrawingGroup.Children>
+   </DrawingGroup>
+   <DrawingImage x:Key="ReportWorkspace_iconDrawingImage" Drawing="{StaticResource ReportWorkspace_iconDrawingGroup}" />
+</ResourceDictionary>

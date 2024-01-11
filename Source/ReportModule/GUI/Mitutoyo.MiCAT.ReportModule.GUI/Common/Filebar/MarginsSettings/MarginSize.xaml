@@ -1,0 +1,46 @@
+﻿<telerik:RadMenuItem x:Class="Mitutoyo.MiCAT.ReportModule.GUI.Common.Filebar.MarginsSettings.MarginSize"
+                     x:Name="ReportPreferencesPageMarginsMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Header="{x:Static p:Resources.PageMargins}"
+             ItemsSource="{Binding MarginSizeSettings.MarginSizeItems}">
+   <telerik:RadMenuItem.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Images/Filebar/FilebarIconResources.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/styles/WorkspaceToolbarStyles.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/ContextMenuStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/RadSplitButtonStyle.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+         <DataTemplate x:Key="HeaderTemplate">
+            <StackPanel Orientation="Vertical">
+               <TextBlock Text="{Binding DisplayName}" AutomationProperties.AutomationId="{Binding Path=Margin.MarginKind, StringFormat='ReportPreferencesMarginMenuItems_{0}', Mode=OneTime}" />
+               <TextBlock Text="{Binding MarginDescription}" Foreground="Gray"/>
+            </StackPanel>
+         </DataTemplate>
+      </ResourceDictionary>
+   </telerik:RadMenuItem.Resources>
+
+
+
+   <telerik:RadMenuItem.ItemContainerStyle>
+      <Style TargetType="telerik:RadMenuItem" BasedOn="{StaticResource childContextMenuEntryStyle}">
+         <Setter Property="IsChecked" Value="{Binding IsChecked}"/>
+         <Setter Property="IsEnabled" Value="{Binding IsEnabled}"/>
+         <Setter Property="MaxHeight" Value="80"/>
+         <Setter Property="Height" Value="40"/>
+         <Setter Property="HeaderTemplate" Value="{StaticResource HeaderTemplate}"/>
+         <Setter Property="Command" Value="{Binding 
+                        Path=DataContext.MarginSizeSettings.UpdateMarginSizeCommand,
+                        RelativeSource={RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type telerik:RadMenu}}}"/>
+         <Setter Property="CommandParameter" Value="{Binding Margin}"/>
+      </Style>
+   </telerik:RadMenuItem.ItemContainerStyle>
+</telerik:RadMenuItem>

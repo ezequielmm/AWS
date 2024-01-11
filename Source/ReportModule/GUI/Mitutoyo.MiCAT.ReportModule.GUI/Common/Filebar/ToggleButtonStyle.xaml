@@ -1,0 +1,133 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:converter="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="../Filebar/ViewtogglebttnON.xaml"/>
+      <ResourceDictionary Source="../Filebar/EdittogglebttnON.xaml"/>
+      <ResourceDictionary Source="../Filebar/ViewtogglebttnHover.xaml"/>
+      <ResourceDictionary Source="../Filebar/EdittogglebttnHover.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <converter:MultiBoolToVisibleValueConverter x:Key="TglConverter"></converter:MultiBoolToVisibleValueConverter>
+   
+   <!--TODO: Replace Gradient by using Solid Color-->
+   <LinearGradientBrush x:Key="ThumbBackground1" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="{StaticResource White}"/>
+      <GradientStop Color="{StaticResource White}" Offset="0.5"/>
+      <GradientStop Color="{StaticResource White}" Offset="0.5"/>
+      <GradientStop Color="{StaticResource White}" Offset="1"/>
+   </LinearGradientBrush>
+   <SolidColorBrush x:Key="BorderBrush2" Color="#FFFE9227" />
+
+   <SolidColorBrush x:Key="BorderBrushNormal1" Color="#FFFE9227" />
+   <LinearGradientBrush x:Key="BackgroundNormal1" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFFE9227"/>
+      <GradientStop Color="#FFFE9227" Offset="1"/>
+   </LinearGradientBrush>
+   <LinearGradientBrush x:Key="ThumbBackgroundChecked1" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFFE9227"/>
+      <GradientStop Color="#FFFE9227" Offset="1"/>
+   </LinearGradientBrush>
+   <SolidColorBrush x:Key="BorderChecked" Color="#FFFE9227"/>
+
+   <LinearGradientBrush x:Key="ThumbBackgroundMouseOver1" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="#FFFE9227" Offset="0"/>
+      <GradientStop Color="#FFFE9227" Offset="0.50"/>
+      <GradientStop Color="#FFFE9227" Offset="0.50"/>
+      <GradientStop Color="#FFFE9227" Offset="1"/>
+   </LinearGradientBrush>
+   <LinearGradientBrush x:Key="ThumbBackgroundPressed1" EndPoint="0.5,1" StartPoint="0.5,0">
+      <GradientStop Color="{StaticResource White}" Offset="0"/>
+      <GradientStop Color="{StaticResource White}" Offset="0.5"/>
+      <GradientStop Color="{StaticResource White}" Offset="0.5"/>
+      <GradientStop Color="{StaticResource White}" Offset="1"/>
+   </LinearGradientBrush>
+
+   <Style x:Key="RadToggleButtonStyle" TargetType="telerik:RadToggleButton">
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Padding" Value="10 1"/>
+      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+      <Setter Property="FontSize" Value="10"/>
+      <Setter Property="FontFamily" Value="Segoe UI"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="HorizontalContentAlignment" Value="Right"/>
+      <Setter Property="Background" Value="{StaticResource BackgroundNormal1}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource BorderBrushNormal1}"/>
+      <Setter Property="Foreground" Value="{StaticResource BlackBrush}"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Height" Value="15"/>
+      <Setter Property="Width" Value="40"/>
+
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="telerik:RadToggleButton">
+               <Grid>
+                  <Grid SnapsToDevicePixels="True">
+                     <Image x:Name="imgViewOn" Source="{StaticResource TglBtnViewOnDrawingImage}">
+                        <Image.Visibility>
+                           <MultiBinding Converter="{StaticResource TglConverter}" ConverterParameter="false|false">
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsChecked"></Binding>
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsMouseOver"></Binding>
+                           </MultiBinding>
+                        </Image.Visibility>
+                     </Image>
+                     <Image x:Name="imgEditOn"  Source="{StaticResource TglBtnEditOnDrawingImage}">
+                        <Image.Visibility>
+                           <MultiBinding Converter="{StaticResource TglConverter}" ConverterParameter="true|false">
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsChecked"></Binding>
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsMouseOver"></Binding>
+                           </MultiBinding>
+                        </Image.Visibility>
+                     </Image>
+                     <Image x:Name="imgViewHover" Source="{StaticResource TglBtnViewHoverDrawingImage}">
+                        <Image.Visibility>
+                           <MultiBinding Converter="{StaticResource TglConverter}" ConverterParameter="false|true">
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsChecked"></Binding>
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsMouseOver"></Binding>
+                           </MultiBinding>
+                        </Image.Visibility>
+                     </Image>
+                     <Image x:Name="imgEditHover" Source="{StaticResource TglBtnEditHoverDrawingImage}">
+                        <Image.Visibility>
+                           <MultiBinding Converter="{StaticResource TglConverter}" ConverterParameter="true|true">
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsChecked"></Binding>
+                              <Binding  RelativeSource="{RelativeSource Mode=TemplatedParent}"  Path="IsMouseOver"></Binding>
+                           </MultiBinding>
+                        </Image.Visibility>
+                     </Image>
+                  </Grid>
+               </Grid>
+    
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+   </Style>
+
+   <Style x:Key="ViewTriggerStyle" TargetType="telerik:Label">
+      <Style.Triggers>
+         <DataTrigger Binding="{Binding IsChecked}" Value="True">
+            <Setter Property="Foreground" Value="{StaticResource NeutralDarkBrush}"/>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IsChecked}" Value="False">
+            <Setter Property="Foreground" Value="{StaticResource OrangeBrush}"/>
+         </DataTrigger>
+      </Style.Triggers>
+   </Style>
+
+   <Style x:Key="EditTriggerStyle" TargetType="telerik:Label">
+      <Style.Triggers>
+         <DataTrigger Binding="{Binding IsChecked}" Value="True">
+            <Setter Property="Foreground" Value="{StaticResource OrangeBrush}"/>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding IsChecked}" Value="False">
+            <Setter Property="Foreground" Value="{StaticResource NeutralDarkBrush}"/>
+         </DataTrigger>
+      </Style.Triggers>
+   </Style>
+
+</ResourceDictionary>

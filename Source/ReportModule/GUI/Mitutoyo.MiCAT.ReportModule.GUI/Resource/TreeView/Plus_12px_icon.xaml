@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<DrawingGroup x:Key="Plus_12px_iconDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<DrawingGroup>
+								<DrawingGroup.Children>
+									<!-- Layer 1/<Group>/<Group>/<Rectangle> -->
+									<GeometryDrawing Brush="#ff3c3c3c" Geometry="F1 M 6.433,9.572 L 5.533,9.572 L 5.533,2.428 L 6.433,2.428 L 6.433,9.572 Z" />
+									<!-- Layer 1/<Group>/<Group>/<Rectangle> -->
+									<GeometryDrawing Brush="#ff3c3c3c" Geometry="F1 M 2.428,6.454 L 2.428,5.554 L 9.572,5.554 L 9.572,6.454 L 2.428,6.454 Z" />
+								</DrawingGroup.Children>
+							</DrawingGroup>
+							<!-- Layer 1/<Group>/<Compound Path> -->
+							<GeometryDrawing Brush="#ff3c3c3c" Geometry="F1 M 11.093,11.108 L 0.873,11.108 L 0.873,0.858 L 11.093,0.858 L 11.093,11.108 Z M 0.000,0.000 L 0.000,12.000 L 12.000,12.000 L 12.000,0.000 L 0.000,0.000 Z" />
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="Plus_12px_iconDrawingImage" Drawing="{StaticResource Plus_12px_iconDrawingGroup}" />
+</ResourceDictionary>

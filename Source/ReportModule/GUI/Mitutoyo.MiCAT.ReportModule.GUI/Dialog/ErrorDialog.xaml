@@ -1,0 +1,59 @@
+﻿<Window x:Class="Mitutoyo.MiCAT.ReportModule.GUI.Dialog.ErrorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:windowHelper="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Utilities"
+        d:DesignHeight="170" d:DesignWidth="400" Height="170" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        windowHelper:WindowIconHelper.ShowIcon="False">
+   <Window.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Images/Dialog/Error.xaml" />
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Dialogs/ConfirmDialogStyle.xaml" />
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </Window.Resources>
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="30"></RowDefinition>
+         <RowDefinition Height="50"></RowDefinition>
+         <RowDefinition Height="60"></RowDefinition>
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="0">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+         </Grid.ColumnDefinitions>
+         <Image Grid.Column="0" Source="{StaticResource ErrorDrawingImage}" />
+         <Label Grid.Column="1" Style="{StaticResource TitleLabelStyle}" Content="{Binding Title}"/>
+      </Grid>
+      <Grid Grid.Row="1">
+         <Grid>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="auto"></RowDefinition>
+               <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource TextMessageStyle}" TextWrapping="Wrap" Text="{Binding Message}" Margin="52,0,20,6"/>
+         </Grid>
+      </Grid>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center">
+         <Button
+            MinWidth="70"
+            Width="Auto"
+            Height="28"
+            Margin="0,10,20,20"
+            Command="{Binding CloseCommand}"
+            IsCancel="True"
+            Style="{StaticResource PrimaryButtonStyle}">
+            <TextBlock
+               Text="{Binding CloseButtonLabel}"
+               Foreground="{StaticResource WhiteBrush}"
+               Padding="8,0,8,0"
+               Width="Auto"
+            />
+         </Button>
+      </StackPanel>
+   </Grid>
+</Window>

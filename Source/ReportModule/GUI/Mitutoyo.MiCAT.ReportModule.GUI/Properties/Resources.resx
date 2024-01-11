@@ -1,0 +1,925 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MiCATHelp" xml:space="preserve">
+    <value>MiCAT Help...</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="CADViewString" xml:space="preserve">
+    <value>CAD View</value>
+  </data>
+  <data name="CharacteristicTableString" xml:space="preserve">
+    <value>Characteristic Table</value>
+  </data>
+  <data name="ChartString" xml:space="preserve">
+    <value>Charts</value>
+  </data>
+  <data name="ChooseColumnsString" xml:space="preserve">
+    <value>Choose Columns:</value>
+  </data>
+  <data name="ClearSortingString" xml:space="preserve">
+    <value>Clear Sorting by "{0}"</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="DataServiceConnectionErrorMessage" xml:space="preserve">
+    <value>Could not connect to the MiCAT Data Service.</value>
+  </data>
+  <data name="DataServiceConnectionErrorTitle" xml:space="preserve">
+    <value>Data Service Connection Error</value>
+  </data>
+  <data name="DataSourcePanelTitle" xml:space="preserve">
+    <value>_</value>
+  </data>
+  <data name="EditReport" xml:space="preserve">
+    <value>TEMPLATE</value>
+    <comment>ToggleReportView</comment>
+  </data>
+  <data name="ExportToolTipString" xml:space="preserve">
+    <value>Export Report to a standard file type.</value>
+  </data>
+  <data name="FeatureTableString" xml:space="preserve">
+    <value>Feature Table</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="FilterToolTipString" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FooterToolTipString" xml:space="preserve">
+    <value>Footer</value>
+  </data>
+  <data name="GetDataString" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="GetDataToolTipString" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="GroupByString" xml:space="preserve">
+    <value>Group by "{0}"</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="ImageString" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ImageToolTipString" xml:space="preserve">
+    <value>Insert image</value>
+  </data>
+  <data name="MeasurementTableString" xml:space="preserve">
+    <value>Measurement Table</value>
+  </data>
+  <data name="SaveSuccessMessage" xml:space="preserve">
+    <value>Save successful!</value>
+  </data>
+  <data name="SaveSuccessTitle" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="NoRunsAvailable" xml:space="preserve">
+    <value>No Runs Available</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Save As</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="PageString" xml:space="preserve">
+    <value>Page {0} of {1}</value>
+  </data>
+  <data name="Program" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="PlotString" xml:space="preserve">
+    <value>Plot</value>
+  </data>
+  <data name="RetrievingDataErrorMessage" xml:space="preserve">
+    <value>Data could not be retrieved from data service.</value>
+  </data>
+  <data name="Runs" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="SaveTemplate" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="SaveTemplateCancelButton" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="SaveTemplateName" xml:space="preserve">
+    <value>Template name</value>
+  </data>
+  <data name="SaveTemplateNameSaveButton" xml:space="preserve">
+    <value>SAVE</value>
+  </data>
+  <data name="SaveTemplateTitle" xml:space="preserve">
+    <value>Save Template</value>
+  </data>
+  <data name="SelectTemplateCancelButton" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="SelectTemplateSubTitle" xml:space="preserve">
+    <value>Templates ({0})</value>
+  </data>
+  <data name="SelectTemplateTitle" xml:space="preserve">
+    <value>Create Report</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>Preferences</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="ShapesString" xml:space="preserve">
+    <value>Shapes</value>
+  </data>
+  <data name="SortAscendingString" xml:space="preserve">
+    <value>Sort Ascending by "{0}"</value>
+  </data>
+  <data name="SortDescendingString" xml:space="preserve">
+    <value>Sort Descending by "{0}"</value>
+  </data>
+  <data name="TableString" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="TextboxString" xml:space="preserve">
+    <value>Textbox</value>
+  </data>
+  <data name="UngroupByString" xml:space="preserve">
+    <value>Ungroup by "{0}"</value>
+  </data>
+  <data name="ViewReport" xml:space="preserve">
+    <value>REPORT</value>
+    <comment>ToggleReportView</comment>
+  </data>
+  <data name="WaterMarkTextBoxString" xml:space="preserve">
+    <value>Insert text here</value>
+  </data>
+  <data name="DialogImagesExtensions" xml:space="preserve">
+    <value>Image files</value>
+  </data>
+  <data name="DialogImagesTitle" xml:space="preserve">
+    <value>Insert Image</value>
+  </data>
+  <data name="RetrievingDataErrorTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteTemplateTitle" xml:space="preserve">
+    <value>Delete Template</value>
+  </data>
+  <data name="AreYouSureToContinue" xml:space="preserve">
+    <value>Are you sure you want to continue?</value>
+  </data>
+  <data name="DeleteTemplateMessage" xml:space="preserve">
+    <value>The template will be removed from the library and permanently deleted from the data service.</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="HeaderFormString" xml:space="preserve">
+    <value>Header Form</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="OpenedFileMessage" xml:space="preserve">
+    <value>The file is currently in use. Please save with a different file name or in a different folder.</value>
+  </data>
+  <data name="OpenedFileTitle" xml:space="preserve">
+    <value>Save as file</value>
+  </data>
+  <data name="FieldItem_DMEName" xml:space="preserve">
+    <value>DME name</value>
+  </data>
+  <data name="FieldItem_DrawingNumber" xml:space="preserve">
+    <value>Drawing number</value>
+  </data>
+  <data name="FieldItem_LotNumber" xml:space="preserve">
+    <value>Lot number</value>
+  </data>
+  <data name="FieldItem_OperatorName" xml:space="preserve">
+    <value>Operator name</value>
+  </data>
+  <data name="FieldItem_PartName" xml:space="preserve">
+    <value>Part name</value>
+  </data>
+  <data name="FieldItem_PlanName" xml:space="preserve">
+    <value>Plan name</value>
+  </data>
+  <data name="FieldItem_PlanVersion" xml:space="preserve">
+    <value>Plan version</value>
+  </data>
+  <data name="FieldItem_SerialNumber" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="FieldItem_Temperature" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="FieldItem_TimeStamp" xml:space="preserve">
+    <value>Time stamp</value>
+  </data>
+  <data name="FieldItem_SelectProperty" xml:space="preserve">
+    <value>Select property</value>
+  </data>
+  <data name="FieldItem_ModelNumber" xml:space="preserve">
+    <value>Model number</value>
+  </data>
+  <data name="SelectTemplateForEditTitle" xml:space="preserve">
+    <value>Edit Template</value>
+  </data>
+  <data name="CharacteristicName" xml:space="preserve">
+    <value>Characteristic Name</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="CharacteristicType" xml:space="preserve">
+    <value>Characteristic Type</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="FeatureName" xml:space="preserve">
+    <value>Feature Name</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Icon</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="LowerTolerance" xml:space="preserve">
+    <value>Lower Tol.</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="Measured" xml:space="preserve">
+    <value>Measured</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="ToleranceGraphic" xml:space="preserve">
+    <value>Tolerance Graphic</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="UpperTolerance" xml:space="preserve">
+    <value>Upper Tol.</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="Nominal" xml:space="preserve">
+    <value>Nominal</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>Characteristic table Column</comment>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>APPLY</value>
+  </data>
+  <data name="EditFilter" xml:space="preserve">
+    <value>Edit filter</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>ALL</value>
+  </data>
+  <data name="ClearFilter" xml:space="preserve">
+    <value>Clear filter</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="NoRunSelectedForFeatureName" xml:space="preserve">
+    <value>Select run to display filter content</value>
+  </data>
+  <data name="Fail" xml:space="preserve">
+    <value>Fail</value>
+    <comment>Filter Status</comment>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>Pass</value>
+    <comment>Filter Status</comment>
+  </data>
+  <data name="Blank" xml:space="preserve">
+    <value>Blank</value>
+    <comment>Blank template name</comment>
+  </data>
+  <data name="FieldItem_Comment" xml:space="preserve">
+    <value>Comment</value>
+    <comment>Measurement Result</comment>
+  </data>
+  <data name="FieldItem_CompanyName" xml:space="preserve">
+    <value>Company name</value>
+    <comment>Measurement Result</comment>
+  </data>
+  <data name="FieldItem_MachineId" xml:space="preserve">
+    <value>Machine ID</value>
+    <comment>Measurement Result</comment>
+  </data>
+  <data name="FieldItem_PartDescription" xml:space="preserve">
+    <value>Part description</value>
+    <comment>Measurement Result</comment>
+  </data>
+  <data name="FieldItem_PartNumber" xml:space="preserve">
+    <value>Part number</value>
+    <comment>Measurement Result</comment>
+  </data>
+  <data name="FieldItem_UserName" xml:space="preserve">
+    <value>User name</value>
+    <comment>Measurement Result</comment>
+  </data>
+  <data name="ExportToPDF" xml:space="preserve">
+    <value>Export to PDF</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="PageSize" xml:space="preserve">
+    <value>Page Size</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="PageSizeA4" xml:space="preserve">
+    <value>A4</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="PageSizeLetter" xml:space="preserve">
+    <value>Letter</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="RedoToolTip" xml:space="preserve">
+    <value>Redo (Ctrl+Y)</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="SaveToolTip" xml:space="preserve">
+    <value>Save</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="UndoToolTip" xml:space="preserve">
+    <value>Undo (Ctrl+Z)</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="ExportToPDFToolTip" xml:space="preserve">
+    <value>Export to PDF</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="NotEvaluated" xml:space="preserve">
+    <value />
+    <comment>Filter Status</comment>
+  </data>
+  <data name="BlankStatus" xml:space="preserve">
+    <value>(Blank)</value>
+    <comment>Filter Status</comment>
+  </data>
+  <data name="TextBoxToolbarAlignCenterToolTip" xml:space="preserve">
+    <value>Align center</value>
+    <comment>TextBox Toolbar Align Center Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarBoldToolTip" xml:space="preserve">
+    <value>Bold</value>
+    <comment>TextBox Toolbar Bold Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarBulletsToolTip" xml:space="preserve">
+    <value>Bullets</value>
+    <comment>TextBox Toolbar Bullets Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarDecreaseFontSizeToolTip" xml:space="preserve">
+    <value>Decrease font size</value>
+    <comment>TextBox Toolbar Decrement Font Size Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarDecreaseLeftIndentToolTip" xml:space="preserve">
+    <value>Decrease indent</value>
+    <comment>TextBox Toolbar Decrement Paragraph Left Indent Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarFontFamilyToolTip" xml:space="preserve">
+    <value>Font type</value>
+    <comment>TextBox Toolbar Font Family Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarFontSizeToolTip" xml:space="preserve">
+    <value>Font size</value>
+    <comment>TextBox Toolbar Font Size Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarForeColorToolTip" xml:space="preserve">
+    <value>Font color</value>
+    <comment>TextBox Toolbar Fore Color Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarHighlightColorToolTip" xml:space="preserve">
+    <value>Text highlight color</value>
+    <comment>TextBox Toolbar Highlight Color Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarIncreaseFontSizeToolTip" xml:space="preserve">
+    <value>Increase font size</value>
+    <comment>TextBox Toolbar Increment Font Size Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarIncreaseLeftIndentToolTip" xml:space="preserve">
+    <value>Increase indent</value>
+    <comment>TextBox Toolbar Increment Paragraph Left Indent Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarItalicToolTip" xml:space="preserve">
+    <value>Italic</value>
+    <comment>TextBox Toolbar Italic Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarNumberedToolTip" xml:space="preserve">
+    <value>Numbering</value>
+    <comment>TextBox Toolbar Numbered Tooltip</comment>
+  </data>
+  <data name="TextBoxToolbarUnderlineToolTip" xml:space="preserve">
+    <value>Underline</value>
+    <comment>TextBox Toolbar Underline Tooltip</comment>
+  </data>
+  <data name="SaveTemplateDialogTitle" xml:space="preserve">
+    <value>Save As (Data Service)</value>
+  </data>
+  <data name="CharacteristicType_XCoordinate" xml:space="preserve">
+    <value>X coordinate</value>
+  </data>
+  <data name="CharacteristicType_Angle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="CharacteristicType_AngleCoordinate" xml:space="preserve">
+    <value>Angle coordinate</value>
+  </data>
+  <data name="CharacteristicType_Angularity" xml:space="preserve">
+    <value>Angularity</value>
+  </data>
+  <data name="CharacteristicType_Circularity" xml:space="preserve">
+    <value>Circularity</value>
+  </data>
+  <data name="CharacteristicType_CircularRunout" xml:space="preserve">
+    <value>Circular runout</value>
+  </data>
+  <data name="CharacteristicType_Coaxiality" xml:space="preserve">
+    <value>Coaxiality</value>
+  </data>
+  <data name="CharacteristicType_Concentricity" xml:space="preserve">
+    <value>Concentricity</value>
+  </data>
+  <data name="CharacteristicType_Conicity" xml:space="preserve">
+    <value>Conicity</value>
+  </data>
+  <data name="CharacteristicType_Cylindricity" xml:space="preserve">
+    <value>Cylindricity</value>
+  </data>
+  <data name="CharacteristicType_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="CharacteristicType_Distance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="CharacteristicType_Flatness" xml:space="preserve">
+    <value>Flatness</value>
+  </data>
+  <data name="CharacteristicType_LineProfile" xml:space="preserve">
+    <value>Line profile</value>
+  </data>
+  <data name="CharacteristicType_Parallelism" xml:space="preserve">
+    <value>Parallelism</value>
+  </data>
+  <data name="CharacteristicType_Perpendicularity" xml:space="preserve">
+    <value>Perpendicularity</value>
+  </data>
+  <data name="CharacteristicType_Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="CharacteristicType_Radius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="CharacteristicType_RCoordinate" xml:space="preserve">
+    <value>R coordinate</value>
+  </data>
+  <data name="CharacteristicType_Roundness" xml:space="preserve">
+    <value>Roundness</value>
+  </data>
+  <data name="CharacteristicType_SlopeAngle" xml:space="preserve">
+    <value>Slope angle</value>
+  </data>
+  <data name="CharacteristicType_Sphericity" xml:space="preserve">
+    <value>Sphericity</value>
+  </data>
+  <data name="CharacteristicType_Straightness" xml:space="preserve">
+    <value>Straightness</value>
+  </data>
+  <data name="CharacteristicType_SurfaceProfile" xml:space="preserve">
+    <value>Surface profile</value>
+  </data>
+  <data name="CharacteristicType_Symmetry" xml:space="preserve">
+    <value>Symmetry</value>
+  </data>
+  <data name="CharacteristicType_TaperAngle" xml:space="preserve">
+    <value>Taper angle</value>
+  </data>
+  <data name="CharacteristicType_Thickness" xml:space="preserve">
+    <value>Thickness</value>
+  </data>
+  <data name="CharacteristicType_TotalRunout" xml:space="preserve">
+    <value>Total runout</value>
+  </data>
+  <data name="CharacteristicType_YCoordinate" xml:space="preserve">
+    <value>Y coordinate</value>
+  </data>
+  <data name="CharacteristicType_ZCoordinate" xml:space="preserve">
+    <value>Z coordinate</value>
+  </data>
+  <data name="DeletePlanMessage" xml:space="preserve">
+    <value>This program and its associated runs will be permanently deleted from the data service.</value>
+    <comment>Plan Confirmation Dialog</comment>
+  </data>
+  <data name="DeletePlanTitle" xml:space="preserve">
+    <value>Delete Program</value>
+    <comment>Plan Confirmation Dialog</comment>
+  </data>
+  <data name="DeleteRunMessage" xml:space="preserve">
+    <value>This run will be permanently deleted from the data service.</value>
+    <comment>Run Confirmation Dialog</comment>
+  </data>
+  <data name="DeleteRunTitle" xml:space="preserve">
+    <value>Delete Run</value>
+    <comment>Run Confirmation Dialog</comment>
+  </data>
+  <data name="DoYouWantToContinue" xml:space="preserve">
+    <value>Do you want to continue?</value>
+  </data>
+  <data name="DeletingDataErrorMessage" xml:space="preserve">
+    <value>Unable to delete from MiCAT Data Service.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Deviation" xml:space="preserve">
+    <value>Deviation</value>
+  </data>
+  <data name="PlanCouldNotBeDeletedTitle" xml:space="preserve">
+    <value>Delete Program Error</value>
+  </data>
+  <data name="RunNotFoundTitle" xml:space="preserve">
+    <value>Load Run Error</value>
+  </data>
+  <data name="CancelButtonLabel" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="GenericError" xml:space="preserve">
+    <value>Unexpected error.</value>
+  </data>
+  <data name="GenericNotFoundError" xml:space="preserve">
+    <value>Resource not found.</value>
+  </data>
+  <data name="PlanCouldNotBeDeletedMessage" xml:space="preserve">
+    <value>Failed to delete program because the program cannot be found.</value>
+  </data>
+  <data name="RunNotFoundMessage" xml:space="preserve">
+    <value>Failed to load run because the run cannot be found in the data service.</value>
+  </data>
+  <data name="OkButtonLabel" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DeleteButtonLabel" xml:space="preserve">
+    <value>DELETE</value>
+  </data>
+  <data name="NoButtonLabel" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="YesButtonLabel" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="CloseWorkspaceConfirmationDialogMessage" xml:space="preserve">
+    <value>Save changes to data service before closing?</value>
+  </data>
+  <data name="CloseWorkspaceConfirmationDialogTitle" xml:space="preserve">
+    <value>Save File</value>
+  </data>
+  <data name="CharacteristicDetail_2D" xml:space="preserve">
+    <value>2D</value>
+  </data>
+  <data name="CharacteristicDetail_3D" xml:space="preserve">
+    <value>3D</value>
+  </data>
+  <data name="CharacteristicDetail_Avg" xml:space="preserve">
+    <value>Avg</value>
+  </data>
+  <data name="CharacteristicDetail_DA" xml:space="preserve">
+    <value>DA</value>
+  </data>
+  <data name="CharacteristicDetail_DR" xml:space="preserve">
+    <value>DR</value>
+  </data>
+  <data name="CharacteristicDetail_DX" xml:space="preserve">
+    <value>DX</value>
+  </data>
+  <data name="CharacteristicDetail_DY" xml:space="preserve">
+    <value>DY</value>
+  </data>
+  <data name="CharacteristicDetail_DZ" xml:space="preserve">
+    <value>DZ</value>
+  </data>
+  <data name="CharacteristicDetail_LC" xml:space="preserve">
+    <value>LC</value>
+  </data>
+  <data name="CharacteristicDetail_LL" xml:space="preserve">
+    <value>LL</value>
+  </data>
+  <data name="CharacteristicDetail_LMC" xml:space="preserve">
+    <value>LMC</value>
+  </data>
+  <data name="CharacteristicDetail_LS" xml:space="preserve">
+    <value>LS</value>
+  </data>
+  <data name="CharacteristicDetail_Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="CharacteristicDetail_Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="CharacteristicDetail_MMC" xml:space="preserve">
+    <value>MMC</value>
+  </data>
+  <data name="CharacteristicDetail_SC" xml:space="preserve">
+    <value>SC</value>
+  </data>
+  <data name="CharacteristicDetail_SL" xml:space="preserve">
+    <value>SL</value>
+  </data>
+  <data name="CharacteristicDetail_SS" xml:space="preserve">
+    <value>SS</value>
+  </data>
+  <data name="CharacteristicDetail_X-Axis" xml:space="preserve">
+    <value>X-Axis</value>
+  </data>
+  <data name="CharacteristicDetail_XY Plane" xml:space="preserve">
+    <value>XY Plane</value>
+  </data>
+  <data name="CharacteristicDetail_Y-Axis" xml:space="preserve">
+    <value>Y-Axis</value>
+  </data>
+  <data name="CharacteristicDetail_Z-Axis" xml:space="preserve">
+    <value>Z-Axis</value>
+  </data>
+  <data name="CharacteristicDetail_X-Axis 2" xml:space="preserve">
+    <value>X-Axis 2</value>
+  </data>
+  <data name="CharacteristicDetail_Y-Axis 2" xml:space="preserve">
+    <value>Y-Axis 2</value>
+  </data>
+  <data name="CharacteristicDetail_Z-Axis 2" xml:space="preserve">
+    <value>Z-Axis 2</value>
+  </data>
+  <data name="CharacteristicDetail_Diameter 2" xml:space="preserve">
+    <value>Diameter 2</value>
+  </data>
+  <data name="CharacteristicDetail_Radius 2" xml:space="preserve">
+    <value>Radius 2</value>
+  </data>
+  <data name="IncompatibleTemplateErrorMessage" xml:space="preserve">
+    <value>The template version is not supported by current application version.</value>
+  </data>
+  <data name="Invalid" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="IncompatibleTemplateErrorTitle" xml:space="preserve">
+    <value>Incompatible Template Version</value>
+  </data>
+  <data name="InvalidTemplateErrorMessage" xml:space="preserve">
+    <value>The template cannot be read due to an invalid format or content error.</value>
+  </data>
+  <data name="InvalidTemplateErrorTitle" xml:space="preserve">
+    <value>Invalid Template</value>
+  </data>
+  <data name="LocalKey_MiCATTemplate1" xml:space="preserve">
+    <value>MiCAT Template 1</value>
+  </data>
+  <data name="LocalKey_MiCATTemplate2" xml:space="preserve">
+    <value>MiCAT Template 2</value>
+  </data>
+  <data name="RefreshToolTip" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="CharacteristicTable_PlaceHolder_FirstLine" xml:space="preserve">
+    <value>Characteristic Table Section ({0} of {1})</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="CharacteristicTable_PlaceHolder_SecondLine" xml:space="preserve">
+    <value>Switch to REPORT mode to view data.</value>
+  </data>
+  <data name="PlanNotFoundMessage" xml:space="preserve">
+    <value>Failed to load program because the program cannot be found
+in the data service.</value>
+  </data>
+  <data name="PlanNotFoundTitle" xml:space="preserve">
+    <value>Load Program Error</value>
+  </data>
+  <data name="RunCouldNotBeDeletedMessage" xml:space="preserve">
+    <value>Failed to delete run because the run cannot be found.</value>
+  </data>
+  <data name="RunCouldNotBeDeletedTitle" xml:space="preserve">
+    <value>Delete Run Error</value>
+  </data>
+  <data name="PartNotFoundMessage" xml:space="preserve">
+    <value>Failed to load part because the part cannot be found in the data service.</value>
+  </data>
+  <data name="PartNotFoundTitle" xml:space="preserve">
+    <value>Load Part Error</value>
+  </data>
+  <data name="NoProgramsAvailable" xml:space="preserve">
+    <value>No Programs Available</value>
+  </data>
+  <data name="ExportToPDFFileName" xml:space="preserve">
+    <value>Report</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="ExportToPDFFileTypeDesc" xml:space="preserve">
+    <value>PDF</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="ExportToPDFTitle" xml:space="preserve">
+    <value>Export</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="MainToolbarExportAs" xml:space="preserve">
+    <value>Export As</value>
+  </data>
+  <data name="MainToolbarExportAsCSV" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="MainToolbarExportAsCSVTooltip" xml:space="preserve">
+    <value>Export data as a CSV file</value>
+  </data>
+  <data name="MainToolbarExportAsPDF" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="MainToolbarExportAsPDFTooltip" xml:space="preserve">
+    <value>Export the report as a PDF file</value>
+  </data>
+  <data name="MainToolbarExportAsTooltip" xml:space="preserve">
+    <value>Export as a file type</value>
+  </data>
+  <data name="PageMargins" xml:space="preserve">
+    <value>Page Margins</value>
+    <comment>FileBar</comment>
+  </data>
+  <data name="MarginNarrow" xml:space="preserve">
+    <value>Narrow</value>
+    <comment>Margin Size</comment>
+  </data>
+  <data name="MarginNormal" xml:space="preserve">
+    <value>Normal</value>
+    <comment>Margin Size</comment>
+  </data>
+  <data name="MarginDescriptionNarrow" xml:space="preserve">
+    <value>Top: 1.27 cm  Bottom: 1.27 cm</value>
+  </data>
+  <data name="MarginDescriptionNormal" xml:space="preserve">
+    <value>Top: 2.54 cm  Bottom: 2.54 cm</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+    <comment>Filebar</comment>
+  </data>
+  <data name="CharacteristicDetail_XY Ref. Plane" xml:space="preserve">
+    <value>XY Ref. Plane</value>
+  </data>
+  <data name="CharacteristicDetail_XY Ref. Plane 2" xml:space="preserve">
+    <value>XY Ref. Plane 2</value>
+  </data>
+  <data name="CharacteristicDetail_YZ Ref. Plane" xml:space="preserve">
+    <value>YZ Ref. Plane</value>
+  </data>
+  <data name="CharacteristicDetail_YZ Ref. Plane 2" xml:space="preserve">
+    <value>YZ Ref. Plane 2</value>
+  </data>
+  <data name="CharacteristicDetail_ZX Ref. Plane" xml:space="preserve">
+    <value>ZX Ref. Plane</value>
+  </data>
+  <data name="CharacteristicDetail_ZX Ref. Plane 2" xml:space="preserve">
+    <value>ZX Ref. Plane 2</value>
+  </data>
+  <data name="CreateTemplateProceedButtonText" xml:space="preserve">
+    <value>CREATE</value>
+  </data>
+  <data name="EditTemplateProceedButtonText" xml:space="preserve">
+    <value>EDIT</value>
+  </data>
+  <data name="DeleteTemplateLabel" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ZoomComboBoxTooltip" xml:space="preserve">
+    <value>Zoom range from 10% to 400%</value>
+  </data>
+  <data name="CharacteristicType_Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+</root>

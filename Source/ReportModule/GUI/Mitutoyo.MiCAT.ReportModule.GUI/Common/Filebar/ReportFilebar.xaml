@@ -1,0 +1,158 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.Common.Filebar.ReportFilebar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:p="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+             xmlns:filebar="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common.Filebar"
+             xmlns:common="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common" 
+             xmlns:margin="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common.Filebar.MarginsSettings"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d">
+   <UserControl.Resources>
+
+      <ResourceDictionary>
+
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Images/Filebar/FilebarIconResources.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/styles/WorkspaceToolbarStyles.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/ContextMenuStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/RadSplitButtonStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+
+
+         <SolidColorBrush x:Key="MouseOverBackground" Color="{StaticResource NeutralLight}"/>
+         <SolidColorBrush x:Key="BackgroundBrushForButton" Color="{StaticResource NeutralLightAlt}"/>
+         <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource NeutralLightAlt}" />
+
+         <Style TargetType="{x:Type Button}" x:Key="BaseButtonStyle">
+            <Style.Triggers>
+               <Trigger Property="IsEnabled" Value="False">
+                  <Setter Property="Opacity" Value="0.5"/>
+               </Trigger>
+            </Style.Triggers>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="0,0,1,0"/>
+            <Setter Property="Template">
+               <Setter.Value>
+                  <ControlTemplate TargetType="{x:Type Button}">
+                     <Border Name="Border"  Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                     </Border>
+                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                           <Setter Property="Background" Value="{StaticResource MouseOverBackground}" TargetName="Border" />
+                           <Setter Property="BorderBrush" Value="{StaticResource MouseOverBackground}" TargetName="Border" />
+                        </Trigger>
+                     </ControlTemplate.Triggers>
+                  </ControlTemplate>
+               </Setter.Value>
+            </Setter>
+         </Style>
+         <common:NegateBoolConverter x:Key="negateBoolConverter"/>
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <Grid Column="3" Background="{StaticResource BackgroundBrushForButton}" IsEnabled="{Binding Path=BusyIndicator.IsBusy, Mode=OneWay, Converter={StaticResource negateBoolConverter}}">
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition  Width="Auto" />
+         <ColumnDefinition  Width="Auto"/>
+         <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <telerik:RadMenu Grid.Column="0" Background="{StaticResource BackgroundBrush}" Margin="0,0,0,0">
+         <telerik:RadMenuItem Header="{x:Static p:Resources.File }" Style="{StaticResource ToolbarTopRadMenuItemStyle}" >
+            <telerik:RadMenuItem x:Name="SaveMenuItem"
+                                 Header="{x:Static p:Resources.Save}" IsEnabled="True" Style="{StaticResource childContextMenuEntryStyle}" 
+                                 Command="{Binding Path=SaveCommand, IsAsync=True}"/>
+            <telerik:RadMenuItem x:Name="SaveAsMenuItem"
+                                 Header="{x:Static p:Resources.SaveAs}" IsEnabled="True" Style="{StaticResource childContextMenuEntryStyle}"
+                                 Command="{Binding Path=SaveAsCommand, IsAsync=True}"/>
+            <telerik:RadMenuItem x:Name="ExportToPDFMenuItem"
+                                 Header="{x:Static p:Resources.ExportToPDF}" Style="{StaticResource childContextMenuEntryStyle}"
+                                 Command="{Binding ExportToPDFCommand}"/>
+            <telerik:RadMenuItem x:Name="CloseMenuItem"
+                                 Header="{x:Static p:Resources.Close}" IsEnabled="True" Style="{StaticResource childContextMenuEntryStyle}"
+                                 Command="{Binding CloseCommand}"/>
+         </telerik:RadMenuItem>
+
+         <telerik:RadMenuItem x:Name="ReportPreferencesMenu"  Header="{x:Static p:Resources.Preferences}" Style="{StaticResource ToolbarTopRadMenuItemStyle}">
+            <telerik:RadMenuItem x:Name="ReportPreferencesPageSizeMenu"  Header ="{x:Static p:Resources.PageSize}"
+                                  ItemsSource="{Binding PageSizeSettings.PageSizeItems}"
+                                  Style="{StaticResource childContextMenuEntryStyle}">
+               <telerik:RadMenuItem.ItemContainerStyle>
+                  <Style TargetType="telerik:RadMenuItem" BasedOn="{StaticResource childContextMenuEntryStyle}">
+                     <Setter Property="AutomationProperties.AutomationId" Value="{Binding Path=PageSizeInfo.PaperKind, StringFormat='ReportPreferencesPageSizeMenuItems_{0}', Mode=OneTime}"/>
+                     <Setter Property="IsChecked" Value="{Binding IsChecked}"/>
+                     <Setter Property="IsEnabled" Value="{Binding IsEnabled}"/>
+                     <Setter Property="Header" Value="{Binding DisplayName}"/>
+                     <Setter Property="Command" Value="{Binding 
+                        Path=DataContext.PageSizeSettings.UpdatePageSizeCommand,
+                        RelativeSource={RelativeSource Mode=FindAncestor,
+                        AncestorType={x:Type telerik:RadMenu}}}"/>
+                     <Setter Property="CommandParameter" Value="{Binding PageSizeInfo}"/>
+                  </Style>
+               </telerik:RadMenuItem.ItemContainerStyle>
+            </telerik:RadMenuItem>
+            <margin:MarginSize Style="{StaticResource childContextMenuEntryStyle}"/>
+         </telerik:RadMenuItem>
+
+         <telerik:RadMenuItem Header="{x:Static p:Resources.View}" Style="{StaticResource ToolbarTopRadMenuItemStyle}" >
+            <telerik:RadMenuItem Header="{x:Static p:Resources.Program}" 
+                                 IsEnabled="True" 
+                                 IsCheckable="True"
+                                 IsChecked="{Binding IsPlansViewVisible, Mode=TwoWay}"
+                                 Command="{Binding Path=TogglePlansViewCommand}"
+                                 Style="{StaticResource childContextMenuEntryStyle}"/>
+            <telerik:RadMenuItem Header="{x:Static p:Resources.Runs}" 
+                                 IsEnabled="True"
+                                 IsCheckable="True"
+                                 IsChecked="{Binding IsRunsViewVisible, Mode=TwoWay}"
+                                 Command="{Binding Path=ToggleRunsViewCommand}"
+                                 Style="{StaticResource childContextMenuEntryStyle}"/>
+         </telerik:RadMenuItem>
+
+         <telerik:RadMenuItem  Header="{x:Static p:Resources.Help}" Style="{StaticResource ToolbarTopRadMenuItemStyle}">
+            <telerik:RadMenuItem 
+               Header="{x:Static p:Resources.MiCATHelp}"
+               Style="{StaticResource childContextMenuEntryStyle}"
+               IsEnabled="True"
+               Command="{Binding OpenHelpCommand}"
+            />
+         </telerik:RadMenuItem>
+
+         <telerik:RadMenuSeparatorItem Height="21" Margin="7,0,7,0"/>
+      </telerik:RadMenu>
+      <Grid Grid.Column="1">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+         </Grid.ColumnDefinitions>
+         <telerik:RadButton x:Name="FileBarSaveButton" Grid.Column="0" Style="{StaticResource BaseButtonStyle}" Command="{Binding Path=SaveCommand, IsAsync=True}" ToolTip="{x:Static p:Resources.SaveToolTip}">
+            <Image Source="{StaticResource Save_iconDrawingImage}"  Stretch="None"/>
+         </telerik:RadButton>
+
+         <telerik:RadButton x:Name="FileBarUndoButton" Grid.Column="1" BorderThickness="0" Style="{StaticResource BaseButtonStyle}" IsEnabled="{Binding CanUndo}" Command="{Binding Path=UndoCommand, IsAsync=True}"
+                            ToolTip="{x:Static p:Resources.UndoToolTip}">
+            <Image Source="{StaticResource Undo_iconDrawingImage}" Stretch="None"/>
+         </telerik:RadButton>
+
+         <telerik:RadButton x:Name="FileBarRedoButton" Grid.Column="2" BorderThickness="0" Style="{StaticResource BaseButtonStyle}" IsEnabled="{Binding CanRedo}" Command="{Binding Path=RedoCommand, IsAsync=True}"
+                            ToolTip="{x:Static p:Resources.RedoToolTip}">
+            <Image Source="{StaticResource Redo_iconDrawingImage}" Stretch="None"/>
+         </telerik:RadButton>
+
+         <telerik:RadButton x:Name="FileBarPdfExportButton" Grid.Column="3" Style="{StaticResource BaseButtonStyle}" Command="{Binding ExportToPDFCommand}" ToolTip="{x:Static p:Resources.ExportToPDFToolTip}">
+            <Image Source="{StaticResource ExportToPdf_iconDrawingImage}" Stretch="None"/>
+         </telerik:RadButton>
+      </Grid>
+      <filebar:ToggleReportView HorizontalAlignment="Right" Grid.Column="2"></filebar:ToggleReportView>
+   </Grid>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <AssemblyTitle>Mitutoyo.MiCAT.ReportModule.Persistence.Service</AssemblyTitle>
+    <Product>Mitutoyo.MiCAT.ReportModule.Persistence.Service</Product>
+    <Copyright>Copyright ©  2018</Copyright>
+    <Version>20.0.11</Version>
+    <AssemblyVersion>20.0.0</AssemblyVersion>
+    <FileVersion>20.0.11</FileVersion>
+    <Platforms>x64</Platforms>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugType>full</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Mitutoyo.MiCAT.ReportModule.Domain\Mitutoyo.MiCAT.ReportModule.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Mitutoyo.MiCAT.DataServiceClient" Version="11.9.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.Style" Version="3.0.1" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

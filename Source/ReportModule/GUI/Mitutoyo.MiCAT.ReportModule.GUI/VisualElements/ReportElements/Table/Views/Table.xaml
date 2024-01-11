@@ -1,0 +1,58 @@
+﻿<UserControl
+   x:Class="Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.ReportElements.Table.Views.Table"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:controls="http://schemas.telerik.com/2008/xaml/presentation"
+   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+   xmlns:c="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.Containers.ReportElementContainer"
+   xmlns:l="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.ReportElements.Table.Views"
+   xmlns:customGridView="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.ReportElements.Table.Views.CustomGridView"
+   mc:Ignorable="d" 
+   d:DesignHeight="300" d:DesignWidth="300">
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/ReportElements/ReportComponentContextMenu.xaml"/>
+            <ResourceDictionary Source="./TableCellStyleSelector.xaml"/>
+            <ResourceDictionary Source="./TableMergedCellStyleSelector.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <c:ReportElementContainer controls:RadContextMenu.ContextMenu="{StaticResource ReportComponentContextMenu}">
+      <customGridView:InteractiveReportGridView 
+         x:Name="TableViewGrid"
+         FontSize="11"
+         CanUserFreezeColumns ="False"
+         CanUserSortColumns="False"
+         CanUserReorderColumns="True"
+         RowIndicatorVisibility="Collapsed"
+         ShowGroupPanel ="False"
+         IsFilteringAllowed="True"
+         IsReadOnly="True"
+         ShouldCloseFilteringPopupOnKeyboardFocusChanged="True"
+         ColumnInfos="{Binding ColumnInfos}"
+         ItemsSource="{Binding DataToDisplay, Mode=OneWay}"
+         AutoGenerateColumns="True"
+         MergedCellsStyleSelector="{StaticResource mergedCellStyleSelector}"
+         CellsStyleSelector="{StaticResource cellStyleSelector}"
+      >
+         <controls:EventToCommandBehavior.EventBindings>
+            <controls:EventBinding Command="{Binding Path=HeaderCommand, IsAsync=True}" EventName="ApplyHeader" RaiseOnHandledEvents="True"
+                                PassEventArgsToCommand="True" />
+            <controls:EventBinding Command="{Binding Path=FilterCommand, IsAsync=True}" EventName="ApplyFilter" RaiseOnHandledEvents="True"
+                                PassEventArgsToCommand="True" />
+            <controls:EventBinding Command="{Binding Path=ColumnWidthsChangedCommand, IsAsync=True}" EventName="ColumnWidthsChanged" PassEventArgsToCommand="True" />
+         </controls:EventToCommandBehavior.EventBindings>
+      </customGridView:InteractiveReportGridView>
+   </c:ReportElementContainer>
+</UserControl>
+
+
+
+
+
+
+

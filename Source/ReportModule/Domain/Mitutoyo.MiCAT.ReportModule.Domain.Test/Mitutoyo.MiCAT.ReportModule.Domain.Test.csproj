@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AssemblyTitle>Mitutoyo.MiCAT.ReportModule.Domain.Test</AssemblyTitle>
+    <Product>Mitutoyo.MiCAT.ReportModule.Domain.Test</Product>
+    <Copyright>Copyright ©  2017</Copyright>
+    <Version>20.0.11</Version>
+    <AssemblyVersion>20.0.0</AssemblyVersion>
+    <FileVersion>20.0.11</FileVersion>
+    <Platforms>x64</Platforms>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugType>full</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Persistence\Mitutoyo.MiCAT.ReportModule.Persistence\Mitutoyo.MiCAT.ReportModule.Persistence.csproj" />
+    <ProjectReference Include="..\Mitutoyo.MiCAT.ReportModule.Domain\Mitutoyo.MiCAT.ReportModule.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Mitutoyo.MiCAT.ApplicationState" Version="11.3.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.ApplicationState.Common" Version="11.3.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.Style" Version="3.0.1" PrivateAssets="all" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+  </ItemGroup>
+</Project>

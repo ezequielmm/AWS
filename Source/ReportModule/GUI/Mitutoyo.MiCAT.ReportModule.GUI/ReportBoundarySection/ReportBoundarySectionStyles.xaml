@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" >
+
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ReportBoundarySection/ReportBoundarySectionContextMenu.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <Style TargetType="Canvas" x:Key="ReportBoundarySectionStyle">
+      <Style.Triggers>
+         <DataTrigger Binding="{Binding Path=IsOverlayVisible}" Value="False">
+            <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
+            <Setter Property="telerik:RadContextMenu.ContextMenu" Value="{StaticResource ReportBoundarySectionContextMenu}"/>
+         </DataTrigger>
+         <DataTrigger Binding="{Binding Path=IsOverlayVisible}" Value="True">
+            <Setter Property="Background" Value="#f6f6f6" />
+            <Setter Property="telerik:RadContextMenu.ContextMenu">
+               <Setter.Value>
+                  <telerik:RadContextMenu Visibility="Collapsed" />
+               </Setter.Value>
+            </Setter>
+         </DataTrigger>
+      </Style.Triggers>
+   </Style>
+</ResourceDictionary>

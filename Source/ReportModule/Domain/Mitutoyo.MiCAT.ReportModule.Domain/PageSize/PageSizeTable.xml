@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PageSizeTable>
+  <PageSize PaperKind="Letter">
+    <Height>1056</Height>
+    <Width>816</Width>
+  </PageSize>
+  <PageSize PaperKind="A4">
+     <Height>1122</Height>
+    <Width>794</Width>
+  </PageSize>
+</PageSizeTable>

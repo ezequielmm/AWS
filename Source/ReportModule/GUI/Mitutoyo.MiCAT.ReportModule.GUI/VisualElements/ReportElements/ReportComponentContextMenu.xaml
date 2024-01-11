@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:properties="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:c="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common"
+             mc:Ignorable="d">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ContextMenu/PageContextMenuEntries.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ContextMenu/ContextMenuItemBasicStyle.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <telerik:RadContextMenu x:Key="ReportComponentContextMenu" Style="{StaticResource ContextMenuStyleWithOutVerticalSeparator}">
+
+      <telerik:RadMenuItem Header="{x:Static properties:Resources.Delete}" Style="{StaticResource ContextMenuItemBasicStyle}">
+         <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Click">
+               <c:EventToCommandAction Command="{Binding DeleteComponentCommand}"/>
+            </i:EventTrigger>
+         </i:Interaction.Triggers>
+         <telerik:RadMenuItem.Icon>
+            <Image Source="{StaticResource DeleteDrawingImage}" Style="{StaticResource MenuItemImageStyle}"/>
+         </telerik:RadMenuItem.Icon>
+      </telerik:RadMenuItem>
+   </telerik:RadContextMenu>
+</ResourceDictionary>

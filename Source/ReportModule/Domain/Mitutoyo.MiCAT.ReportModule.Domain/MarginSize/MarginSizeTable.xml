@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MarginSizeTable>
+  <MarginSize MarginKind="Normal">
+    <Top>96</Top>
+    <Bottom>96</Bottom>
+    <Left>0</Left>
+    <Right>0</Right>
+  </MarginSize>
+   <MarginSize MarginKind="Narrow">
+      <Top>48</Top>
+      <Bottom>48</Bottom>
+      <Left>0</Left>
+      <Right>0</Right>
+   </MarginSize>
+</MarginSizeTable>

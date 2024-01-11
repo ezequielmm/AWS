@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   <DrawingGroup x:Key="DeleteDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="{StaticResource BlackBrush}" Geometry="F1 M 4.999,10.945 C 5.292,10.945 5.532,10.705 5.532,10.412 L 5.532,5.942 C 5.532,5.646 5.292,5.410 4.999,5.410 C 4.706,5.410 4.466,5.649 4.466,5.942 L 4.466,10.412 C 4.466,10.705 4.706,10.945 4.999,10.945 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Brush="{StaticResource BlackBrush}" Geometry="F1 M 7.814,10.945 C 8.107,10.945 8.347,10.705 8.347,10.412 L 8.347,5.942 C 8.347,5.646 8.107,5.410 7.814,5.410 C 7.521,5.410 7.281,5.649 7.281,5.942 L 7.281,10.412 C 7.281,10.705 7.521,10.945 7.814,10.945 Z" />
+							<!-- Layer 1/<Group>/<Compound Path> -->
+                     <GeometryDrawing Brush="{StaticResource BlackBrush}" Geometry="F1 M 10.097,12.706 C 10.097,12.832 10.006,12.935 9.880,12.935 L 2.933,12.935 C 2.808,12.935 2.716,12.832 2.716,12.706 L 2.716,2.929 L 10.097,2.929 L 10.097,12.706 Z M 5.071,1.293 C 5.075,1.168 5.159,1.065 5.284,1.065 L 7.525,1.065 C 7.650,1.065 7.734,1.168 7.734,1.293 L 7.734,1.864 L 5.071,1.864 L 5.071,1.293 Z M 12.284,1.864 L 8.804,1.864 L 8.804,1.293 C 8.804,0.582 8.240,0.000 7.528,0.000 L 5.288,0.000 C 4.577,0.000 4.014,0.582 4.014,1.293 L 4.014,1.864 L 0.533,1.864 C 0.240,1.864 0.000,2.104 0.000,2.397 C 0.000,2.689 0.240,2.929 0.533,2.929 L 1.651,2.929 L 1.651,12.706 C 1.651,13.418 2.222,14.000 2.933,14.000 L 9.876,14.000 C 10.588,14.000 11.158,13.418 11.158,12.706 L 11.158,2.929 L 12.280,2.929 C 12.573,2.929 12.813,2.689 12.813,2.397 C 12.813,2.104 12.581,1.864 12.284,1.864 Z" />
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="DeleteDrawingImage" Drawing="{StaticResource DeleteDrawingGroup}" />
+</ResourceDictionary>

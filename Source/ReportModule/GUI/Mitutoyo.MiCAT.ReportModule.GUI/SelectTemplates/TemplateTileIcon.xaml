@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+   
+   <DrawingGroup x:Key="TemplateTileIconDrawingGroup">
+      <DrawingGroup.Children>
+         <DrawingGroup>
+            <DrawingGroup.Children>
+               <DrawingGroup>
+                  <DrawingGroup.Children>
+                     <!-- Layer 1/<Group>/<Rectangle> -->
+                     <GeometryDrawing Brush="#fffffefd" Geometry="F1 M 70.000,70.000 L 0.000,70.000 L 0.000,0.000 L 70.000,0.000 L 70.000,70.000 Z" />
+                     <DrawingGroup>
+                        <DrawingGroup.Children>
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 50.463,57.378 C 50.805,57.378 51.082,57.101 51.082,56.759 L 51.082,1.639 C 51.082,1.297 50.805,1.019 50.463,1.019 L 7.936,1.019 C 7.594,1.019 7.316,1.297 7.316,1.639 L 7.316,56.759 C 7.316,57.101 7.594,57.378 7.936,57.378 L 50.463,57.378" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 26.215,69.537 L 61.400,69.577 C 62.578,69.577 63.532,68.623 63.532,67.445 L 63.532,37.721 L 62.323,31.818 L 62.323,13.606 C 62.323,12.429 63.342,11.132 62.165,11.132 L 55.260,11.132 L 19.597,11.132 C 18.420,11.132 17.466,12.086 17.466,13.263 L 17.466,35.684 L 26.215,44.893 L 26.215,53.445 L 26.215,65.674 L 26.215,69.537 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Compound Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 52.373,56.313 L 52.373,2.131 C 52.373,0.955 51.420,0.000 50.243,0.000 L 8.439,0.000 C 7.262,0.000 6.308,0.955 6.308,2.131 L 6.308,56.313 C 6.308,57.490 7.262,58.444 8.439,58.444 L 50.243,58.444 C 51.420,58.444 52.373,57.490 52.373,56.313 Z M 50.833,57.479 L 8.486,57.479 C 7.620,57.479 7.223,56.762 7.223,56.417 L 7.223,1.942 C 7.223,1.596 7.508,0.852 8.347,0.852 L 50.272,0.852 C 50.859,0.852 51.458,1.401 51.458,1.746 L 51.458,56.852 C 51.458,57.198 51.178,57.705 50.833,57.705" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="{StaticResource WhiteBrush}" Geometry="F1 M 54.138,10.834 L 18.952,10.795 C 17.775,10.795 16.821,11.750 16.821,12.926 L 16.821,67.108 C 16.821,68.285 17.775,69.239 18.952,69.239 L 60.755,69.239 C 61.933,69.239 62.887,68.285 62.887,67.108 L 62.887,44.687 L 62.638,11.632 L 61.033,10.634 L 56.561,10.858 L 54.138,10.834 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Compound Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 16.953,67.318 L 16.953,35.603 L 16.953,12.590 C 16.954,11.824 18.018,10.858 19.136,10.816 L 54.283,10.816 L 60.865,10.816 C 61.644,10.817 62.753,11.785 62.755,12.563 L 62.755,44.819 L 62.755,67.066 C 62.753,67.833 62.151,68.882 60.921,69.112 L 25.254,69.112 L 19.136,69.112 C 17.682,69.112 16.954,68.095 16.953,67.318 Z M 60.800,10.028 L 18.996,10.028 C 18.794,10.028 18.597,10.049 18.406,10.089 C 17.070,10.345 16.060,11.515 16.060,12.926 L 16.060,67.108 C 16.060,68.706 17.354,70.000 18.952,70.000 L 60.755,70.000 C 60.958,70.000 61.155,69.978 61.346,69.939 C 62.682,69.683 63.692,68.512 63.692,67.102 L 63.692,12.920 C 63.691,11.323 62.397,10.029 60.800,10.028 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 33.398,38.584 L 32.679,38.584 C 31.778,38.584 31.046,37.853 31.046,36.952 L 31.046,34.568 C 31.046,33.666 31.778,32.935 32.679,32.935 L 33.398,32.935 C 34.299,32.935 35.031,33.666 35.031,34.568 L 35.031,36.952 C 35.031,37.853 34.299,38.584 33.398,38.584 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 40.120,38.584 L 40.010,38.584 C 38.941,38.584 38.073,37.717 38.073,36.648 L 38.073,31.041 C 38.073,29.971 38.941,29.103 40.010,29.103 L 40.120,29.103 C 41.189,29.103 42.056,29.971 42.056,31.041 L 42.056,36.648 C 42.056,37.717 41.189,38.584 40.120,38.584 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 47.198,38.584 L 46.982,38.584 C 45.942,38.584 45.099,37.741 45.099,36.701 L 45.099,28.445 C 45.099,27.404 45.942,26.560 46.982,26.560 L 47.198,26.560 C 48.240,26.560 49.083,27.404 49.083,28.445 L 49.083,36.701 C 49.083,37.741 48.240,38.584 47.198,38.584 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#fff37837" Geometry="F1 M 56.689,22.348 L 23.441,22.348 L 23.441,18.547 L 56.689,18.547 L 56.689,22.348 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#fff37837" Geometry="F1 M 56.689,62.640 L 38.981,62.640 L 38.981,45.125 L 56.689,45.125 L 56.689,62.640 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 35.440,47.302 L 23.440,47.302 L 23.440,45.125 L 35.440,45.125 L 35.440,47.302 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 35.440,54.963 L 23.440,54.963 L 23.440,52.786 L 35.440,52.786 L 35.440,54.963 Z" />
+                           <!-- Layer 1/<Group>/<Group>/<Path> -->
+                           <GeometryDrawing Brush="#ff2a2b2a" Geometry="F1 M 35.440,62.625 L 23.440,62.625 L 23.440,60.447 L 35.440,60.447 L 35.440,62.625 Z" />
+                        </DrawingGroup.Children>
+                     </DrawingGroup>
+                  </DrawingGroup.Children>
+               </DrawingGroup>
+            </DrawingGroup.Children>
+         </DrawingGroup>
+      </DrawingGroup.Children>
+   </DrawingGroup>
+   <DrawingImage x:Key="TemplateTileIconDrawingImage" Drawing="{StaticResource TemplateTileIconDrawingGroup}" />
+</ResourceDictionary>

@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <DrawingGroup x:Key="Part iconDrawingGroup">
+      <DrawingGroup.Children>
+         <DrawingGroup>
+            <DrawingGroup.Children>
+               <DrawingGroup>
+                  <DrawingGroup.Children>
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Brush="#ffececec" Geometry="F1 M 0.229,2.072 L 0.229,11.603 L 10.896,11.603 L 10.896,6.939 L 4.351,6.939 L 4.351,2.072 L 0.229,2.072 Z" />
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Brush="#ff989898" Geometry="F1 M 4.351,2.072 L 7.216,0.077 L 7.216,4.903 L 4.351,6.939 L 4.351,2.072 Z" />
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Brush="#ff989898" Geometry="F1 M 10.987,6.851 L 13.854,4.903 L 13.854,9.615 L 10.987,11.603 L 10.987,6.851 Z" />
+                     <!-- Layer 1/<Group>/<Compound Path> -->
+                     <GeometryDrawing Brush="#ff2a2a2a" Geometry="F1 M 7.330,0.000 L 2.988,0.000 L 0.000,2.072 L 0.000,11.840 L 10.896,11.840 L 14.000,9.596 L 14.000,4.798 L 7.330,4.798 L 7.330,0.000 Z M 6.830,0.500 L 6.830,4.798 L 6.830,5.298 L 7.330,5.298 L 13.500,5.298 L 13.500,9.340 L 10.734,11.340 L 0.500,11.340 L 0.500,2.333 L 3.145,0.500 L 6.830,0.500" />
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Geometry="F1 M 10.896,11.603 L 10.896,6.939 L 4.351,6.939 L 4.351,2.167 L 0.229,2.167">
+                        <GeometryDrawing.Pen>
+                           <Pen DashCap="Flat" Thickness="0.5" Brush="#ff2a2a2a" MiterLimit="1.0" />
+                        </GeometryDrawing.Pen>
+                     </GeometryDrawing>
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Geometry="F1 M 4.351,6.939 L 7.216,4.903">
+                        <GeometryDrawing.Pen>
+                           <Pen DashCap="Flat" Thickness="0.5" Brush="#ff2a2a2a" MiterLimit="1.0" />
+                        </GeometryDrawing.Pen>
+                     </GeometryDrawing>
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Geometry="F1 M 10.896,6.939 L 13.722,5.038">
+                        <GeometryDrawing.Pen>
+                           <Pen DashCap="Flat" Thickness="0.5" Brush="#ff2a2a2a" MiterLimit="1.0" />
+                        </GeometryDrawing.Pen>
+                     </GeometryDrawing>
+                     <!-- Layer 1/<Group>/<Path> -->
+                     <GeometryDrawing Geometry="F1 M 4.433,2.148 L 7.005,0.281">
+                        <GeometryDrawing.Pen>
+                           <Pen DashCap="Flat" Thickness="0.5" Brush="#ff2a2a2a" MiterLimit="1.0" />
+                        </GeometryDrawing.Pen>
+                     </GeometryDrawing>
+                  </DrawingGroup.Children>
+               </DrawingGroup>
+            </DrawingGroup.Children>
+         </DrawingGroup>
+      </DrawingGroup.Children>
+   </DrawingGroup>
+   <DrawingImage x:Key="Part iconDrawingImage" Drawing="{StaticResource Part iconDrawingGroup}" />
+</ResourceDictionary>

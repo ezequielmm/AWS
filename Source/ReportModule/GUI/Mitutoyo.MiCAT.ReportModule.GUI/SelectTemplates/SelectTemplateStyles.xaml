@@ -1,0 +1,50 @@
+﻿<ResourceDictionary
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+   
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Dialogs/ConfirmDialogStyle.xaml" />
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/ToolWindowCommon.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <SolidColorBrush x:Key="LabelForeground" Color="#0f0f0f"/>
+
+   <Style TargetType="{x:Type Label}" x:Key="TitleLabelStyle">
+      <Setter Property="FontFamily" Value="Segoe UI Regular" />
+      <Setter Property="FontSize" Value="18" />
+      <Setter Property="Foreground" Value="{StaticResource LabelForeground}"/>
+      <Setter Property="HorizontalAlignment" Value="Left"/>
+      <Setter Property="VerticalAlignment" Value="Center"></Setter>
+      <Setter Property="Margin" Value="10"></Setter>
+   </Style>
+   <Style TargetType="{x:Type Label}" x:Key="SubTitleLabelStyle" BasedOn="{StaticResource TitleLabelStyle}">
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="FontWeight" Value="Bold" />
+   </Style>
+   <Style TargetType="{x:Type Border}" x:Key="VerticalSeparatorStyle">
+      <Setter Property="BorderThickness" Value="1,0,0,0"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NeutralPrimaryBrush}"/>
+      <Setter Property="Width" Value="1"/>
+   </Style>
+   <Style TargetType="{x:Type Border}" x:Key="HorizontalSeparatorStyle">
+      <Setter Property="BorderThickness" Value="0,1,0,0"/>
+      <Setter Property="BorderBrush" Value="{StaticResource NeutralSecondaryBrush}"/>
+      <Setter Property="Margin" Value="18,0,0,0"/>
+      <Setter Property="Height" Value="1"/>
+   </Style>
+   <Style TargetType="telerik:Tile">
+      <Setter Property="TileType" Value="Quadruple"/>
+   </Style>
+   <DataTemplate x:Key="ItemTemplate">
+      <Grid>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="3*" />
+         </Grid.RowDefinitions>
+         <TextBlock Text="{Binding Name}"/>
+         <Image Grid.Row="1" Source="pack://application:,,,/Mitutoyo.MiCAT.ReportModule.GUI;component/Resource/template.png"></Image>
+      </Grid>
+   </DataTemplate>
+</ResourceDictionary>

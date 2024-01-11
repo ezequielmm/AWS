@@ -1,0 +1,51 @@
+﻿<Canvas x:Class="Mitutoyo.MiCAT.ReportModule.GUI.MainWindow.ReportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:local="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.MainWindow"
+        xmlns:pageLayout="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.PageLayout"
+        xmlns:reportElement="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.ReportElementList.Views"
+        mc:Ignorable="d" 
+        d:DesignHeight="450" d:DesignWidth="800"
+        IsHitTestVisible="{Binding ReportModeProperty.IsEditMode}" Focusable="{Binding ReportModeProperty.IsEditMode}"
+        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+        TextElement.FontFamily="Segoe UI, Microsoft YaHei, Microsoft JhengHei"
+        Typography.Kerning="False">
+   <Canvas.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Containers/InteractiveControlContainer/InteractiveControlContainerStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Containers/VisualElementContainer/VisualElementContainerStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Containers/ReportElementContainer/ReportElementContainerStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Containers/ReportPieceContainer/ReportPieceContainerStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Styles/RadGridViewLightStyle.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+         
+         <Style x:Key="ReportElementListStyle" TargetType="reportElement:ReportElementList">
+            <Setter Property="IsHitTestVisible" 
+                    Value="{Binding Path=DataContext.ReportModeProperty.IsEditingReportBodySectionMode,
+                                                                RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                                 AncestorType={x:Type local:ReportView}}}"/>
+            <Style.Triggers>
+               <DataTrigger Binding="{Binding Path=DataContext.ReportModeProperty.IsReportBodyGrayed,
+                                              RelativeSource={RelativeSource Mode=FindAncestor,
+                                                            AncestorType={x:Type local:ReportView}}}"
+                            Value="True">
+                  <Setter Property="Opacity" Value="0.5" />
+               </DataTrigger>
+            </Style.Triggers>
+         </Style>
+      </ResourceDictionary>
+   </Canvas.Resources>
+
+   <pageLayout:PagesView x:Name="Pages" DataContext="{Binding PagesRenderer.RenderedData.Pages, Mode=OneWay}" />
+   <reportElement:ReportElementList x:Name="Pieces"  DataContext="{Binding PagesRenderer.ElementList.ElementPieces, Mode=OneWay}" Focusable="False" Style="{StaticResource ReportElementListStyle}"/>
+   <reportElement:ReportElementList x:Name="Elements" DataContext="{Binding PagesRenderer.ElementList.Elements, Mode=OneWay}" Focusable="False" Style="{StaticResource ReportElementListStyle}"/>
+
+   <telerik:EventToCommandBehavior.EventBindings>
+      <telerik:EventBinding Command="{Binding Path=OnContextMenuOpening}" 
+                            EventName="ContextMenuOpening" PassEventArgsToCommand="True" />
+   </telerik:EventToCommandBehavior.EventBindings>
+</Canvas>

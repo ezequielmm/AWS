@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.MainWindow.Zoom.ZoomControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:zoom="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.MainWindow.Zoom"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:properties="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+             d:DesignHeight="23" d:DesignWidth="60">
+
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Styles/ReportComboBoxStyle.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </UserControl.Resources>
+   
+   <zoom:PercentageComboBox 
+      x:Name="DropDownButton"
+      Style="{StaticResource ReportComboBoxStyle}"
+      IsEditable="True" 
+      Width="65"
+      Height="22"
+      IsTextSearchEnabled="False"
+      FontSize="12"
+      PercentValue="{Binding Scale, Mode=TwoWay}"     
+      ItemsSource="{Binding ZoomOptions}"
+      ToolTip="{x:Static properties:Resources.ZoomComboBoxTooltip}"
+      SelectionBrush="#90cfff"
+      DisplayMemberPath="Text">
+
+      <i:Interaction.Triggers>
+         <i:EventTrigger EventName="SelectionChanged">
+            <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
+                                   CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type telerik:RadComboBox}}, Path=SelectedItem}"/>
+         </i:EventTrigger>
+      </i:Interaction.Triggers>
+   
+   </zoom:PercentageComboBox>
+   
+</UserControl>

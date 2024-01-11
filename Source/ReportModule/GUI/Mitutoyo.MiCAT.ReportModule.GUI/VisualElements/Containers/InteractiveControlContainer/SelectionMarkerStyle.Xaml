@@ -1,0 +1,215 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:l="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.Containers.InteractiveControlContainer"
+    xmlns:cu="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Resource.EmbeddedCursors">
+
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/ReportElements/ReportComponentContextMenu.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <Storyboard x:Key="MakeHitTestVisibleWithDelay">
+      <BooleanAnimationUsingKeyFrames
+         Storyboard.TargetProperty="IsHitTestVisible"
+         Duration="0"
+         BeginTime="0:0:0.5"
+         FillBehavior="HoldEnd">
+         <DiscreteBooleanKeyFrame Value="True" />
+      </BooleanAnimationUsingKeyFrames>
+   </Storyboard>
+   
+   <Style TargetType="{x:Type l:SelectionMarker}">
+      <Setter Property="Visibility" Value="Collapsed" />
+      <Setter Property="IsHitTestVisible" Value="False" />
+      <Setter Property="Focusable" Value="True"/>
+      <!--Refactor: Find a better way to assign the Context Menu into the Selection Markers-->
+      <Setter Property="telerik:RadContextMenu.ContextMenu" Value="{StaticResource ReportComponentContextMenu}"/>
+      <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="None" />
+      <Setter Property="Template">
+         <Setter.Value>
+            <ControlTemplate TargetType="{x:Type l:SelectionMarker}">
+               <Ellipse
+                  Stroke="Black"
+                  StrokeThickness="1"
+                  Fill="White"
+               />
+            </ControlTemplate>
+         </Setter.Value>
+      </Setter>
+      
+      <Style.Triggers>
+         <DataTrigger Binding="{Binding Control.IsSelected, RelativeSource={RelativeSource Self}}" Value="True">
+            <Setter Property="Visibility" Value="Visible" />
+            <DataTrigger.EnterActions>
+               <BeginStoryboard
+                  Name="MakeHitTestVisibleWithDelay" 
+                  Storyboard="{StaticResource MakeHitTestVisibleWithDelay}"/>
+            </DataTrigger.EnterActions>
+            <DataTrigger.ExitActions>
+               <RemoveStoryboard BeginStoryboardName="MakeHitTestVisibleWithDelay"/>
+            </DataTrigger.ExitActions>
+         </DataTrigger>
+
+         <DataTrigger Binding="{Binding Control.IsDraggable, RelativeSource={RelativeSource Self}}" Value="True">
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="Move" />
+         </DataTrigger>
+
+         <!--Top Left Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="TopLeft" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNWSE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Horizontal" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="TopLeft" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Vertical" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="TopLeft" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+         <!--Top Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Top" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Vertical" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Top" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+
+         <!--Top Right Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="TopRight" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNESW" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Horizontal" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="TopRight" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Vertical" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="TopRight" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+
+         <!--Left Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Left" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Horizontal" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Left" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+
+         <!--Right Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Right" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Horizontal" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Right" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+
+         <!--Bottom Left Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="BottomLeft" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNESW" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Horizontal" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="BottomLeft" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Vertical" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="BottomLeft" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+
+         <!--Bottom Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Bottom" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Vertical" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="Bottom" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+
+         <!--Bottom Right Marker Style-->
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="All" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="BottomRight" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNWSE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Horizontal" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="BottomRight" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeWE" />
+         </MultiDataTrigger>
+         <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+               <Condition Binding="{Binding Control.ResizeType, RelativeSource={RelativeSource Self}}" Value="Vertical" />
+               <Condition Binding="{Binding MarkerType, RelativeSource={RelativeSource Self}}" Value="BottomRight" />
+            </MultiDataTrigger.Conditions>
+            <Setter Property="cu:EmbeddedCursorExtensions.EmbeddedCursor" Value="BlackResizeNS" />
+         </MultiDataTrigger>
+      </Style.Triggers>
+   </Style>
+</ResourceDictionary>
+   

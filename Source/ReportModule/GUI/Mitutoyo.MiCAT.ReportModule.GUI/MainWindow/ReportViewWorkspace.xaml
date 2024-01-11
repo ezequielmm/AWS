@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.ReportViewWorkspace"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:mainwindow="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.MainWindow"
+             xmlns:navigation="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Navigation"
+             xmlns:pageLayout="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.PageLayout"
+             xmlns:utilities="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Utilities"
+             xmlns:zoom="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.MainWindow.Zoom"
+             xmlns:controls="clr-namespace:Mitutoyo.MiCAT.Common.GUI.RadDocking.Controls;assembly=Mitutoyo.MiCAT.Common.GUI"
+             xmlns:reportingcommon="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="../ContextMenu/PageContextMenuEntries.xaml"/>
+            <ResourceDictionary Source="../ContextMenu/ContextMenuItemBasicStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/Navigation/NavigationPanelStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Containers/InteractiveControlContainer/SelectionMarkerStyle.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+         <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
+         <reportingcommon:NegateBoolConverter x:Key="NegateBoolConverter" />
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <Grid x:Name="MainReportWorkspaceGrid">
+         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+         </Grid.RowDefinitions>
+
+         <mainwindow:MainToolbar Grid.Row="0"></mainwindow:MainToolbar>
+         <controls:RadDockingEx x:Name="MainDockManager" Grid.Row="1" HasDocumentHost="False" RetainPaneSizeMode="DockingAndFloating" mainwindow:MainDockingBehavior.IsEnabled="True">  
+            <telerik:EventToCommandBehavior.EventBindings>
+               <telerik:EventBinding Command="{Binding HideViewsCommand}" EventName='Close' PassEventArgsToCommand="True" />
+            </telerik:EventToCommandBehavior.EventBindings>
+            <controls:RadSplitContainerEx x:Name="PlansAndRunsSplitContainer" Orientation="Vertical" InitialPosition="DockedLeft">
+               <controls:RadPaneGroupEx>
+                  <controls:RadPaneEx Name="PlansViewPane"
+                                      Title="{Binding Path=DataContext, ElementName=PartsView, Mode=OneWay}" 
+                                      Header="{Binding Path=DataContext, ElementName=PartsView, Mode=OneWay}" 
+                                      HeaderTemplate="{StaticResource TitleTemplateParts}" 
+                                      TitleTemplate="{StaticResource TitleTemplateParts}"
+                                      IsHidden="{Binding Path=DataContext.IsVisible, Mode=TwoWay, ElementName=PartsView, Converter={StaticResource NegateBoolConverter}}"
+                                      CanFloat="False"
+                                      >
+                     <navigation:Parts x:Name="PartsView"/>
+                  </controls:RadPaneEx>
+               </controls:RadPaneGroupEx>
+               <controls:RadPaneGroupEx>
+                  <controls:RadPaneEx Name="RunsViewPane"
+                                      Title="{Binding Path=DataContext.Title, ElementName=RunsView, Mode=OneWay}"
+                                      IsHidden="{Binding Path=DataContext.IsVisible, Mode=TwoWay, ElementName=RunsView, Converter={StaticResource NegateBoolConverter}}"
+                                      CanFloat="False"
+                                      >
+                     <navigation:Runs x:Name="RunsView"/>
+                  </controls:RadPaneEx>
+               </controls:RadPaneGroupEx>
+            </controls:RadSplitContainerEx >
+
+            <telerik:RadSplitContainer x:Name="ReportSplitContainer" Orientation="Vertical" InitialPosition="DockedRight">
+               <telerik:RadPaneGroup>
+                  <telerik:RadPane Name="ReportPane" CanFloat="False" CanUserPin="False" CanUserClose="False"
+                                      PaneHeaderVisibility="Collapsed" Margin="0">
+                     <Grid x:Name="MainReportGrid" AllowDrop="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                           <RowDefinition Height="*"/>
+                           <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <telerik:CarouselScrollViewer x:Name="scrollViewer" Background="#E6E6E6" Grid.Row="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                                                   AllowDrop="{Binding AllowDragDrop}" 
+                                                   pageLayout:DependencyObjectDragDropBehavior.IsEnabled="{Binding Path=AllowDragDrop, Mode=OneWay}"
+                                                   pageLayout:DependencyObjectDragDropBehavior.PositionRelativeForDraggedComponents="{Binding ElementName = ReportViewContainer, Mode=OneWay}"
+                                                   zoom:ZoomBehavior.Container="{Binding ElementName = GridForPagesAndElements, Mode=OneWay}"
+                                                   zoom:ZoomBehavior.ZoomScale="{Binding ZoomFactor.Scale}"
+                                                   zoom:ZoomBehavior.IsEnabled="{Binding Path=AllowZoom, Mode=OneWay}"
+                                                   >
+                           <i:Interaction.Triggers>
+                              <i:EventTrigger EventName="PreviewMouseWheel">
+                                 <utilities:ScrollviewerEventToCommand Command="{Binding ZoomFactor.ZoomCommand}" />
+                              </i:EventTrigger>
+                              <i:EventTrigger EventName="KeyDown">
+                                 <utilities:ScrollviewerEventToCommand Command="{Binding ZoomFactor.ZoomCommand}"  />
+                              </i:EventTrigger>
+                           </i:Interaction.Triggers>
+                           <telerik:CarouselScrollViewer.InputBindings>
+                              <KeyBinding Key="Delete" Command="{Binding Path=DeleteSelectedItemsCommand}" CommandParameter="DelKey" Localization.Attributes="CommandParameter(Unreadable Unmodifiable)"/>
+                           </telerik:CarouselScrollViewer.InputBindings>
+                           <telerik:EventToCommandBehavior.EventBindings>
+                              <telerik:EventBinding Command="{Binding Path=ClearSelection}" EventName="PreviewMouseDown" PassEventArgsToCommand="True" />
+                              <telerik:EventBinding Command="{Binding Path=SelectPageSectionCommand, IsAsync=True}" EventName="PreviewMouseDoubleClick" PassEventArgsToCommand="True" />
+                           </telerik:EventToCommandBehavior.EventBindings>
+
+                        <Grid x:Name="GridForPagesAndElements" Height="{Binding PageLayoutCalculator.RenderedData.Pages.TotalPagesHeight}"
+                                 Width="{Binding PageLayoutCalculator.ActualPageSettings.PageSize.Width}"
+                                 HorizontalAlignment="Center">
+                           <Grid.LayoutTransform>
+                              <TransformGroup>
+                                 <ScaleTransform />
+                              </TransformGroup>
+                           </Grid.LayoutTransform>
+                           <mainwindow:ReportView x:Name="ReportViewContainer" DataContext="{Binding VMReportView}">
+                                 <mainwindow:ReportView.Style>
+                                    <Style TargetType="mainwindow:ReportView">
+                                       <Style.Triggers>
+                                          <DataTrigger Binding="{Binding ReportModeProperty.IsEditingReportBodySectionMode}" Value="True">
+                                             <Setter Property="telerik:RadContextMenu.ContextMenu" Value="{Binding Path=ContextMenu, Source={StaticResource RadContextMenuContent}}"/>
+                                          </DataTrigger>
+                                          <DataTrigger Binding="{Binding ReportModeProperty.IsEditingReportBodySectionMode}" Value="False">
+                                             <Setter Property="telerik:RadContextMenu.ContextMenu" Value="{x:Null}"/>
+                                          </DataTrigger>
+                                       </Style.Triggers>
+                                    </Style>
+                                 </mainwindow:ReportView.Style>
+                              </mainwindow:ReportView>
+                        </Grid>
+                        </telerik:CarouselScrollViewer>
+                        <mainwindow:ReportViewStatusBar x:Name="ReportViewStatusBar" Grid.Row="1" DockPanel.Dock="Bottom" Height="auto"/>
+                        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                              Visibility="{Binding Path=BusyIndicator.IsBusy, Converter={StaticResource VisibleIfTrueConverter}}"
+                              Panel.ZIndex="99"
+                              Background="LightGray"
+                              Opacity="0.25"
+                              Cursor="Wait"
+                              ForceCursor="True">  
+                        </Canvas>
+                     </Grid>
+                  </telerik:RadPane>
+               </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+         </controls:RadDockingEx>
+   </Grid>
+   <UserControl.InputBindings>
+      <KeyBinding Gesture="CTRL+Z" Command="{Binding Path=UndoCommand, IsAsync=True}" />
+      <KeyBinding Gesture="CTRL+Y" Command="{Binding Path=RedoCommand, IsAsync=True}" />
+   </UserControl.InputBindings>
+</UserControl>
+

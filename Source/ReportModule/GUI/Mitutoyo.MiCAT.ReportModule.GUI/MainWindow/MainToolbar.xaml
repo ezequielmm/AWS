@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.MainWindow.MainToolbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:p="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:common="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d">
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/Views/MainToolbarResources.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/Images/ToolbarIconResources.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+         <common:NegateBoolConverter x:Key="NegateBoolConverter" />
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <telerik:RadToolBarTray IsEnabled="{Binding Path=BusyIndicator.IsBusy, Converter={StaticResource NegateBoolConverter}}">
+      <telerik:RadToolBar ItemContainerStyleSelector="{StaticResource StyleSelectedForRadToolbar}" Background="{StaticResource WhiteBrush}" 
+                          Margin="0" BorderThickness="0" GripVisibility="Collapsed" Height="55">
+
+         <telerik:RadDropDownButton x:Name="FeaturesToolBarButton"
+                                    IsEnabled="{Binding IsExportAsEnabled}"
+                                    common:CloseRadDropDownButtonOnRadContextMenuItemClickBehavior.RadContextMenu="{Binding ElementName=RadContextMenu}">
+            <StackPanel Orientation="Vertical" ToolTip="{x:Static p:Resources.MainToolbarExportAsTooltip}">
+               <Image Source="{StaticResource Export AsDrawingImage}" Style="{DynamicResource ToolbarButtonImageStyle}" />
+               <TextBlock Text="{x:Static p:Resources.MainToolbarExportAs}" Style="{DynamicResource MenuItemTextBlockStyle}"/>
+            </StackPanel>
+            <telerik:RadDropDownButton.DropDownContent>
+               <telerik:RadContextMenu 
+                  x:Name="RadContextMenu"
+                  Style="{StaticResource RadContextMenuForDropDownButtonStyle}">
+                  <telerik:RadMenuItem x:Name="PDFToolbarButton" Header="{x:Static p:Resources.MainToolbarExportAsPDF}" Command="{Binding ExportAsPDFCommand}" ToolTip="{x:Static p:Resources.MainToolbarExportAsPDFTooltip}">
+                     <telerik:RadMenuItem.Icon>
+                        <Image Source="{StaticResource Export As PDFDrawingImage}" Style="{StaticResource MenuItemImageStyle}" />
+                     </telerik:RadMenuItem.Icon>
+                  </telerik:RadMenuItem>
+                  <telerik:RadMenuItem x:Name="CSVToolbarButton" Header="{x:Static p:Resources.MainToolbarExportAsCSV}" Command="{Binding ExportAsCSVCommand}"
+                                       ToolTip="{x:Static p:Resources.MainToolbarExportAsCSVTooltip}">
+                     <telerik:RadMenuItem.Icon>
+                        <Image Source="{StaticResource Export As CSVDrawingImage}" Style="{StaticResource MenuItemImageStyle}" />
+                     </telerik:RadMenuItem.Icon>
+                  </telerik:RadMenuItem>
+               </telerik:RadContextMenu>
+            </telerik:RadDropDownButton.DropDownContent>
+         </telerik:RadDropDownButton>
+      </telerik:RadToolBar>
+   </telerik:RadToolBarTray>
+</UserControl>

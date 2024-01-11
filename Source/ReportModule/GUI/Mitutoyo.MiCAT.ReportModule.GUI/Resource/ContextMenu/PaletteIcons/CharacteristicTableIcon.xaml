@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<DrawingGroup x:Key="CharacteristicTableDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Compound Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 9.388,3.976 L 11.474,3.976 L 11.474,2.485 L 9.388,2.485 L 9.388,3.976 Z M 0.000,11.453 L 2.086,11.453 L 2.086,9.961 L 0.000,9.961 L 0.000,11.453 Z M 0.000,8.854 L 2.086,8.854 L 2.086,7.363 L 0.000,7.363 L 0.000,8.854 Z M 9.388,1.491 L 11.474,1.491 L 11.474,0.000 L 9.388,0.000 L 9.388,1.491 Z M 6.258,3.976 L 8.345,3.976 L 8.345,2.485 L 6.258,2.485 L 6.258,3.976 Z M 3.129,1.491 L 5.215,1.491 L 5.215,0.000 L 3.129,0.000 L 3.129,1.491 Z M 6.258,0.000 L 6.258,1.491 L 8.345,1.491 L 8.345,0.000 L 6.258,0.000 Z M 3.129,3.976 L 5.215,3.976 L 5.215,2.485 L 3.129,2.485 L 3.129,3.976 Z M 0.000,3.976 L 2.086,3.976 L 2.086,2.485 L 0.000,2.485 L 0.000,3.976 Z M 0.000,6.461 L 2.086,6.461 L 2.086,4.970 L 0.000,4.970 L 0.000,6.461 Z M 0.000,0.000 L 2.086,0.000 L 2.086,1.491 L 0.000,1.491 L 0.000,0.000 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff06699a" Geometry="F1 M 5.425,12.843 L 4.848,12.843 L 4.848,13.186 L 5.221,13.186 L 13.627,13.185 L 14.000,13.184 L 14.000,12.843 L 5.425,12.843 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff06699a" Geometry="F1 M 9.596,6.563 L 9.596,6.123 L 9.252,6.123 L 9.252,6.407 L 9.254,12.803 L 9.254,13.087 L 9.596,13.087 L 9.596,6.563 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.129,6.461 L 5.215,6.461 L 5.215,4.970 L 3.129,4.970 L 3.129,6.461 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.129,8.854 L 5.215,8.854 L 5.215,7.363 L 3.129,7.363 L 3.129,8.854 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.129,11.453 L 5.215,11.453 L 5.215,9.961 L 3.129,9.961 L 3.129,11.453 Z" />
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="CharacteristicTableDrawingImage" Drawing="{StaticResource CharacteristicTableDrawingGroup}" />
+</ResourceDictionary>

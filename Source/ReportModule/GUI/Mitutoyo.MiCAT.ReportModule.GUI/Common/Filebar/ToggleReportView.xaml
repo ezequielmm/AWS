@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.Common.Filebar.ToggleReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:y ="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common.Filebar"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:p="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+   <UserControl.Resources >
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="ToggleButtonStyle.xaml"/>
+            <ResourceDictionary>
+               <s:Boolean x:Key="FalseValue">False</s:Boolean>
+               <s:Boolean x:Key="TrueValue">True</s:Boolean>
+            </ResourceDictionary>
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <Grid Column="3" Background="Transparent">
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition />
+         <ColumnDefinition />
+         <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      
+      <telerik:Label Grid.Column="0" 
+                 x:Name="LblViewReport" 
+                 Style="{StaticResource ViewTriggerStyle}"
+                 FontWeight="Bold"
+                 Content="{x:Static p:Resources.ViewReport}" 
+                 HorizontalAlignment="Left"
+                 VerticalContentAlignment="Center" />
+      <telerik:RadToggleButton Grid.Column="1"
+                               IsEnabled="True"
+                               x:Name="BtnReportView" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center" 
+                               IsChecked="{Binding IsChecked}"
+                               Background="{StaticResource OrangeBrush}"
+                               Style="{StaticResource RadToggleButtonStyle}">
+         <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Checked">
+               <i:InvokeCommandAction Command="{Binding Path=CheckedCommand}" CommandParameter="{StaticResource TrueValue}" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="Unchecked">
+               <i:InvokeCommandAction Command="{Binding Path=UncheckedCommand}" CommandParameter="{StaticResource FalseValue}"/>
+            </i:EventTrigger>
+         </i:Interaction.Triggers>
+      </telerik:RadToggleButton>
+      <telerik:Label Grid.Column="2" 
+                     x:Name="LblEditReport" 
+                     Style="{StaticResource EditTriggerStyle}"
+                     Content="{x:Static p:Resources.EditReport}" 
+                     FontWeight="Bold"
+                     HorizontalAlignment="Right"/>
+   </Grid>
+</UserControl>

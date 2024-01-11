@@ -1,0 +1,15 @@
+﻿<shell:ShellApplication x:Class="Mitutoyo.MiCAT.ReportModule.GUI.Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:shell="clr-namespace:Mitutoyo.MiCAT.Shell;assembly=Mitutoyo.MiCAT.Shell">
+    <Application.Resources>
+         
+    </Application.Resources>
+</shell:ShellApplication>
+
+
+
+
+
+
+

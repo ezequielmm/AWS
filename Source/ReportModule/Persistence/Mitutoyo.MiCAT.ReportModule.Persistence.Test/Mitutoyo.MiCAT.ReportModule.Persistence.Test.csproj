@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <AssemblyTitle>Mitutoyo.MiCAT.ReportModule.Persistence.Test</AssemblyTitle>
+    <Product>Mitutoyo.MiCAT.ReportModule.Persistence.Test</Product>
+    <Copyright>Copyright ©  2018</Copyright>
+    <Version>20.0.11</Version>
+    <AssemblyVersion>20.0.0</AssemblyVersion>
+    <FileVersion>20.0.11</FileVersion>
+    <Platforms>x64</Platforms>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugType>full</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\App\Mitutoyo.MiCAT.ReportModule.Setup\Mitutoyo.MiCAT.ReportModule.Setup.csproj" />
+    <ProjectReference Include="..\..\Domain\Mitutoyo.MiCAT.ReportModule.Domain\Mitutoyo.MiCAT.ReportModule.Domain.csproj" />
+    <ProjectReference Include="..\Mitutoyo.MiCAT.ReportModule.Persistence.Service\Mitutoyo.MiCAT.ReportModule.Persistence.Service.csproj" />
+    <ProjectReference Include="..\Mitutoyo.MiCAT.ReportModule.Persistence\Mitutoyo.MiCAT.ReportModule.Persistence.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Mitutoyo.MiCAT.DataServiceClient" Version="11.9.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.Style" Version="3.0.1" PrivateAssets="all" />
+    <PackageReference Include="Moq" Version="4.16.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Unity" Version="5.10.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Helper\test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

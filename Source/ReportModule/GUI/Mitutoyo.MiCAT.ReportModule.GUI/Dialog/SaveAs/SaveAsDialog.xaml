@@ -1,0 +1,86 @@
+﻿<telerik:RadWindow x:Class="Mitutoyo.MiCAT.ReportModule.GUI.Dialog.SaveAs.SaveAsDialog"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+            xmlns:properties="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+            xmlns:dialog="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Dialog"
+            xmlns:saveAs="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Dialog.SaveAs"
+            xmlns:c="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common"
+            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+            d:DesignHeight="300" 
+            d:DesignWidth="300" 
+            mc:Ignorable="d" 
+            Height="Auto"
+            MinHeight="100"
+            MinWidth="495"
+            Width="Auto"
+            HideMinimizeButton="True"
+            HideMaximizeButton="True"
+            CanClose="False"
+            ResizeMode="NoResize" 
+            WindowStartupLocation="CenterScreen"
+            Style="{DynamicResource SettingsRadWindowStyle}">
+
+   <telerik:RadWindow.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/SaveAs/SaveTemplateDialogStyles.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </telerik:RadWindow.Resources>
+
+   <telerik:RadWindow.HeaderTemplate>
+      <DataTemplate>
+         <Grid Background="{StaticResource BlueLightBrush}" MinHeight="43" Height="Auto">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Static properties:Resources.SaveTemplateDialogTitle}"
+                   Style="{DynamicResource SaveAsHeaderLabelStyle}" Background="{StaticResource BlueLightBrush}"/>
+         </Grid>
+      </DataTemplate>
+   </telerik:RadWindow.HeaderTemplate>
+
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="Auto"></RowDefinition>
+         <RowDefinition Height="*"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Grid  Grid.Row="0" Margin="10 25 18 0">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+         </Grid.ColumnDefinitions>
+         <Label Content="{x:Static properties:Resources.SaveTemplateName}"></Label>
+         <TextBox 
+            x:Name="TemplateNameTextBox"
+            Grid.Column="1" 
+            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=False}" 
+            Style="{StaticResource SaveTemplateTextBox}"
+            saveAs:TextBoxBehavior.TripleClickSelectAll ="True">
+         </TextBox>
+      </Grid>
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Margin="0 0 8 9">
+         <Button 
+            IsEnabled="{Binding CanSave}" 
+            CommandParameter="{Binding Name}" 
+            Command="{Binding SaveCommand}"
+            c:CloseOnClickBehavior.IsEnabled="True"
+            Style="{StaticResource SaveAsSaveButtonStyle}">
+            <TextBlock Text="{x:Static properties:Resources.SaveTemplateNameSaveButton}" Padding="8,0,8,0" Width="Auto"/>
+         </Button>
+         <Button 
+            Command="{Binding CancelCommand}" Style="{StaticResource SaveAsCancelStyle}"
+            c:CloseOnClickBehavior.IsEnabled="True">
+            <TextBlock Text="{x:Static properties:Resources.SaveTemplateCancelButton}" Padding="8,0,8,0" Width="Auto"/>
+         </Button>
+      </StackPanel>
+   </Grid>
+</telerik:RadWindow>

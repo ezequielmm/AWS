@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<DrawingGroup x:Key="FeatureTableDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Compound Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 9.387,3.976 L 11.473,3.976 L 11.473,2.485 L 9.387,2.485 L 9.387,3.976 Z M 0.000,11.451 L 2.086,11.451 L 2.086,9.960 L 0.000,9.960 L 0.000,11.451 Z M 0.000,8.853 L 2.086,8.853 L 2.086,7.363 L 0.000,7.363 L 0.000,8.853 Z M 9.387,1.491 L 11.473,1.491 L 11.473,0.000 L 9.387,0.000 L 9.387,1.491 Z M 6.258,3.976 L 8.344,3.976 L 8.344,2.485 L 6.258,2.485 L 6.258,3.976 Z M 3.129,1.491 L 5.215,1.491 L 5.215,0.000 L 3.129,0.000 L 3.129,1.491 Z M 6.258,0.000 L 6.258,1.491 L 8.344,1.491 L 8.344,0.000 L 6.258,0.000 Z M 3.129,3.976 L 5.215,3.976 L 5.215,2.485 L 3.129,2.485 L 3.129,3.976 Z M 0.000,3.976 L 2.086,3.976 L 2.086,2.485 L 0.000,2.485 L 0.000,3.976 Z M 0.000,6.461 L 2.086,6.461 L 2.086,4.970 L 0.000,4.970 L 0.000,6.461 Z M 0.000,0.000 L 2.086,0.000 L 2.086,1.491 L 0.000,1.491 L 0.000,0.000 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.129,6.461 L 5.215,6.461 L 5.215,4.970 L 3.129,4.970 L 3.129,6.461 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.129,8.853 L 5.215,8.853 L 5.215,7.363 L 3.129,7.363 L 3.129,8.853 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.129,11.451 L 5.215,11.451 L 5.215,9.960 L 3.129,9.960 L 3.129,11.451 Z" />
+							<DrawingGroup>
+								<DrawingGroup.Children>
+									<!-- Layer 1/<Group>/<Group>/<Path> -->
+									<GeometryDrawing Brush="#ff78b1cb" Geometry="F1 M 7.471,6.329 L 14.000,5.520 L 14.000,12.013 L 7.471,12.982 L 7.471,6.329 Z">
+										<GeometryDrawing.Pen>
+											<Pen DashCap="Flat" Thickness="0.3" Brush="#ff2f363c" MiterLimit="1.0" />
+										</GeometryDrawing.Pen>
+									</GeometryDrawing>
+								</DrawingGroup.Children>
+							</DrawingGroup>
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="FeatureTableDrawingImage" Drawing="{StaticResource FeatureTableDrawingGroup}" />
+</ResourceDictionary>

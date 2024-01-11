@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AssemblyTitle>Mitutoyo.MiCAT.ReportModule.GUI</AssemblyTitle>
+    <Product>Mitutoyo.MiCAT.ReportModule.GUI</Product>
+    <Copyright>Copyright ©  2017</Copyright>
+    <Version>20.0.11</Version>
+    <AssemblyVersion>20.0.0</AssemblyVersion>
+    <FileVersion>20.0.11</FileVersion>
+    <Platforms>x64</Platforms>
+    <UseWPF>true</UseWPF>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <Import Project="MsBuildAL1073WarningWorkaround.targets" />
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\DefaultAddImage.png" />
+    <EmbeddedResource Include="Resource\EmbeddedCursors\BlackResizeNWSE.cur" />
+    <EmbeddedResource Include="Resource\EmbeddedCursors\MoveCursor.cur" />
+    <EmbeddedResource Include="Resource\EmbeddedCursors\BlackResizeWE.cur" />
+    <EmbeddedResource Include="Resource\EmbeddedCursors\BlackResizeNESW.cur" />
+    <EmbeddedResource Include="Resource\EmbeddedCursors\BlackResizeNS.cur" />
+    <Resource Include="Images\Spinner.gif" />
+    <Resource Include="Resource\imagePageDimension.jpg" />
+    <Resource Include="Resource\attach.png" />
+    <Resource Include="Resource\export.png" />
+    <Resource Include="Resource\template.png" />
+    <Resource Include="Dialog\info.png" />
+    <Resource Include="Dialog\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\App\Mitutoyo.MiCAT.ReportModule.App\Mitutoyo.MiCAT.ReportModule.App.csproj" />
+    <ProjectReference Include="..\..\Domain\Mitutoyo.MiCAT.ReportModule.Domain\Mitutoyo.MiCAT.ReportModule.Domain.csproj" />
+    <ProjectReference Include="..\Mitutoyo.MiCAT.ReportModule.PDFRenderer\Mitutoyo.MiCAT.ReportModule.PDFRenderer.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Mitutoyo.MiCAT.ApplicationState" Version="11.3.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.ApplicationState.Common" Version="11.3.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.Common" Version="13.4.2" />
+    <PackageReference Include="Mitutoyo.MiCAT.Core.StdLib" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Mitutoyo.MiCAT.Style" Version="3.0.1" PrivateAssets="all" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1367" />
+    <PackageReference Include="Prism.Wpf" Version="7.2.0.1367" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+    <PackageReference Include="Telerik.Windows.Controls.Docking.for.Wpf.Xaml" Version="2020.3.1020">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Telerik.Windows.Controls.for.Wpf.Xaml" Version="2020.3.1020" />
+    <PackageReference Include="Telerik.Windows.Controls.GridView.for.Wpf.Xaml" Version="2020.3.1020" />
+    <PackageReference Include="Telerik.Windows.Controls.RichTextBox.for.Wpf.Xaml" Version="2020.3.1020" />
+    <PackageReference Include="Telerik.Windows.Documents.Fixed" Version="2020.3.1019" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

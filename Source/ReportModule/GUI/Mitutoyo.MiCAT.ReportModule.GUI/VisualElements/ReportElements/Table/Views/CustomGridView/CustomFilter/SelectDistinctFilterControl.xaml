@@ -1,0 +1,237 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.ReportElements.Table.Views.CustomGridView.CustomFilter.SelectDistinctFilterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:properties="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Properties"
+             xmlns:g="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI"
+             xmlns:common="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.Common"
+             mc:Ignorable="d" 
+             FontWeight="Regular"
+             d:DesignHeight="450" d:DesignWidth="800">
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary>
+               <common:ReciprocalScaleValueConverter x:Key="ReciprocalScaleValueConverter"/>
+            </ResourceDictionary>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/Resource/Search.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/MessageBoxStyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Dialogs/Confirmdialogstyle.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Toolwindowcommon.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/ScrollBarStyle.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+         <Style TargetType="ScrollBar" BasedOn="{StaticResource ScrollBarStyle}"/>
+         <Style TargetType="TextBox" BasedOn="{StaticResource SelectableTextBoxStyle}">
+            <Setter Property="Template">
+               <Setter.Value>
+                  <ControlTemplate TargetType="{x:Type TextBox}">
+                     <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                             Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                <StackPanel>
+                                    <ScrollViewer HorizontalScrollBarVisibility="Hidden"
+                                      VerticalScrollBarVisibility="Hidden"
+                                      Name="PART_ContentHost"
+                                      Focusable="False" />
+                                    <Image Source="{StaticResource SearchDrawingImage}" 
+                                  Stretch="None"
+                                  Width="12"
+                                  Height="12"
+                                  Margin="-6 -12 5 3"
+                                  HorizontalAlignment="Right"/>
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+         <Style TargetType="Border">
+            <Setter Property="LayoutTransform">
+               <Setter.Value>
+                  <TransformGroup>
+                     <ScaleTransform ScaleX="{Binding Path=DataContext.ZoomFactor.Scale, RelativeSource={RelativeSource Mode=FindAncestor,
+                                 AncestorType={x:Type g:ReportViewWorkspace}}, Converter={StaticResource ReciprocalScaleValueConverter}}" 
+                                                 ScaleY="{Binding Path=DataContext.ZoomFactor.Scale, RelativeSource={RelativeSource Mode=FindAncestor,
+                                 AncestorType={x:Type g:ReportViewWorkspace}}, Converter={StaticResource ReciprocalScaleValueConverter}}"/>
+                  </TransformGroup>
+               </Setter.Value>
+            </Setter>
+         </Style>
+      </ResourceDictionary>
+    </UserControl.Resources>
+    <Border x:Name="FilterPopup"
+           Style="{StaticResource MessageBoxStyle}">
+        <Grid Width="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                    Text="{x:Static properties:Resources.EditFilter}"
+                    Height="34"
+                    Padding="12 8 0 0"
+                    Margin="0 0 0 11"
+                    Background="{StaticResource BlueLightBrush}" 
+                    Foreground="{StaticResource WhiteBrush}"
+                    FontSize="13"
+                    />
+            <TextBox x:Name="FilterBox" 
+                  Grid.Row="1"
+                  Margin="12 0 12 8"
+                  Width="Auto"
+                  FontSize="11"
+                  Height="20"
+                  Text="{Binding FilterText}"
+                  >
+                <telerik:EventToCommandBehavior.EventBindings>
+                    <telerik:EventBinding Command="{Binding Path=SearchFilterOptionCommand}" EventName="TextChanged" CommandParameter="{Binding Text, ElementName=FilterBox}" />
+                </telerik:EventToCommandBehavior.EventBindings>
+            </TextBox>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Margin="19 0 0 0" Grid.Column="0" 
+                      Command="{Binding SelectAllCommand}"
+                      CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}"
+                      IsChecked="{Binding IsAllSelected}">
+                    <Label Style="{StaticResource BlackText}" Padding="0" Content="{x:Static properties:Resources.All}" HorizontalAlignment="Left" />
+                </CheckBox>
+                <Label Padding="0" Margin="0 0 12 0" Grid.Column="1" Content="{x:Static properties:Resources.ClearFilter}" HorizontalAlignment="Right">
+                    <Label.Style>
+                        <Style TargetType="{x:Type Label}" BasedOn="{StaticResource GrayText}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSomeSelected}" Value="True">
+                                    <Setter Property="Foreground" Value="{StaticResource BlueLightBrush}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Label.Style>
+                    <telerik:EventToCommandBehavior.EventBindings>
+                        <telerik:EventBinding Command="{Binding Path=ClearFilterCommand}" EventName="MouseLeftButtonDown" PassEventArgsToCommand="True"/>
+                    </telerik:EventToCommandBehavior.EventBindings>
+                </Label>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="200" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="158"/>
+                </Grid.RowDefinitions>
+                <Border Style="{StaticResource MessageBoxStyle}" Margin="12 8 12 0" Grid.Column="0" Grid.Row="1">
+                    <ScrollViewer>
+                        <StackPanel Orientation="Vertical">
+                            <Border Height="148">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsEmpty}" Value="True">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                              Style="{StaticResource GrayText}" 
+                              Content="{x:Static properties:Resources.NoRunSelectedForFeatureName }" 
+                              HorizontalAlignment="Center" Padding="8 65" Height="158" />
+                            </Border>
+
+                            <Border>
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsEmpty}" Value="False">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <ItemsControl x:Name="ListBox"
+                                       ItemsSource="{Binding DistinctOptions.View}"
+                                       Width="Auto"
+                                       Margin="0 0 0 0">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <CheckBox 
+                                             Margin="6 6 0 0"
+                                             IsChecked="{Binding IsChecked}"
+                                             IsEnabled="{Binding IsEnabled}"
+                                             Command="{Binding ElementName=ListBox, Path=DataContext.FilterOptionClickCommand}"
+                                             >
+                                                    <Label Name="OptionName" Padding="0" Style="{StaticResource BlackText}" Content="{Binding Name}" />
+                                                </CheckBox>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Border>
+                        </StackPanel>
+                        <ScrollViewer.Style>
+                            <Style TargetType="ScrollViewer">
+                                <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsEmpty}" Value="False">
+                                        <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ScrollViewer.Style>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="4" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+               MinWidth="70"
+               Width="Auto"
+               MinHeight="28"
+               Height="32.63"
+               Margin="12 12 8 12"
+               Grid.Column="0" 
+              Style="{StaticResource PrimaryButtonStyle}"  
+              Command="{Binding ApplyFilterCommand}">
+                    <TextBlock
+                  Text="{x:Static properties:Resources.Apply}"
+                  Foreground="White"
+                  Padding="8,0,8,0"
+                  Width="Auto"/>
+                </Button>
+                <Button
+               MinWidth="70"
+               Width="Auto"
+               MinHeight="28"
+               Height="32.63"
+               Margin="0 12 12 12"
+               Grid.Column="1" 
+               Style="{StaticResource DefaultButtonStyle}" 
+               Command="{Binding CancelFilterCommand}">
+                    <TextBlock
+                  Text="{x:Static properties:Resources.SelectTemplateCancelButton}"
+                  Foreground="{StaticResource BlackBrush}"
+                  Padding="8,0,8,0"
+                  Width="Auto"/>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
+

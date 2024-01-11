@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Mitutoyo.MiCAT.ReportModule.GUI.ReportBoundarySection.ReportBoundarySectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:reportElement="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.ReportElementList.Views"
+             xmlns:pageLayout="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.PageLayout"
+             xmlns:reportboundarysection="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.ReportBoundarySection"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+   <UserControl.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ReportBoundarySection/ReportBoundarySectionStyles.xaml"/>
+            <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/ReportBoundarySection/ReportBoundarySectionContextMenu.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+         <Style x:Key="BoundaryElementListStyle" TargetType="reportElement:ReportElementList">
+            <Setter Property="IsHitTestVisible" Value="{Binding Path=DataContext.IsSectionOnEditMode,
+                                                                RelativeSource={RelativeSource Mode=FindAncestor,
+                                                                  AncestorType={x:Type reportboundarysection:ReportBoundarySectionView}}}"/>
+            <Style.Triggers>
+               <DataTrigger Binding="{Binding Path=DataContext.IsOverlayVisible,
+                                              RelativeSource={RelativeSource Mode=FindAncestor,
+                                                AncestorType={x:Type reportboundarysection:ReportBoundarySectionView}}}"
+                            Value="True">
+                  <Setter Property="Opacity" Value="0.5" />
+               </DataTrigger>
+            </Style.Triggers>
+         </Style>
+      </ResourceDictionary>
+   </UserControl.Resources>
+
+   <i:Interaction.Triggers>
+      <i:EventTrigger EventName="PreviewMouseDoubleClick">
+         <i:InvokeCommandAction Command="{Binding Path=SelectReportBoundarySection}"/>
+      </i:EventTrigger>
+   </i:Interaction.Triggers>
+
+   <Canvas x:Name="ReportBoundarySectionComponentsContainer"
+            Style="{StaticResource ReportBoundarySectionStyle}"
+            AllowDrop="{Binding IsSectionOnEditMode, Mode=OneWay}"
+            pageLayout:DependencyObjectDragDropBehavior.IsEnabled="{Binding IsSectionOnEditMode, Mode=OneWay}"
+            ClipToBounds="True" ContextMenu="{x:Null}">
+
+      <reportElement:ReportElementList x:Name="BoundaryElementList"  
+            DataContext="{Binding ComponentViewModels, Mode=OneWay}"
+            Focusable="False"
+            Style="{StaticResource BoundaryElementListStyle}"/>
+   </Canvas>
+</UserControl>

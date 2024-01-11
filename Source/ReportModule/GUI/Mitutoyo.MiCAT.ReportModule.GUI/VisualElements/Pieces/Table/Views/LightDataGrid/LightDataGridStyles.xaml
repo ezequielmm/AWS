@@ -1,0 +1,41 @@
+﻿<ResourceDictionary  
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:g="clr-namespace:Mitutoyo.MiCAT.ReportModule.GUI.VisualElements.Pieces.Table.Views.LightDataGrid">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.ReportModule.GUI;component/VisualElements/Styles/DataGridStyle.xaml"/>
+      <ResourceDictionary Source="/Mitutoyo.MiCAT.Common.GUI;component/Styles/Colors.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+   <Style TargetType="g:LightDataGrid" x:Key="LightDataGridStyle">
+      <Setter Property="Background" Value="#E8E8E8"/>
+   </Style>
+
+   <Style TargetType="Border" x:Key="LightDataGrid_CellStyle">
+      <Setter Property="BorderThickness" Value="1 1 0 0"/>
+      <Setter Property="BorderBrush" Value="{StaticResource GridView_BasicBrush}"/>
+      <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
+      <Setter Property="Padding" Value="4 4 5 4"/>
+      <Setter Property="SnapsToDevicePixels" Value="True"/>
+   </Style>
+
+   <Style TargetType="Border" x:Key="LightDataGrid_HeaderCellStyle"
+          BasedOn="{StaticResource LightDataGrid_CellStyle}">
+      <Setter Property="Background" Value="{StaticResource GridView_AlternativeBrush}"/>
+      <Setter Property="Padding" Value="4 0 7 0"/>
+   </Style>
+
+   <Style TargetType="TextBlock" x:Key="LightDataGrid_TextBlockStyle">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="Foreground" Value="{StaticResource GridView_MarkerBrush}"/>
+      <Setter Property="FontSize" Value="11"/>
+   </Style>
+
+   <Style TargetType="TextBlock" x:Key="LightDataGrid_HeaderCellTextBlockStyle" BasedOn="{StaticResource LightDataGrid_TextBlockStyle}">
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="FontSize" Value="11"/>
+   </Style>
+
+   <Style TargetType="TextBlock" x:Key="LightDataGrid_BodyCellTextBlockStyle" BasedOn="{StaticResource LightDataGrid_TextBlockStyle}">
+   </Style>
+</ResourceDictionary>

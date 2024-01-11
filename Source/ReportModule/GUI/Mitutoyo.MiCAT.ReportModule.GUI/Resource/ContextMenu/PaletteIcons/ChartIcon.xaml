@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<DrawingGroup x:Key="ChartDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff959595" Geometry="F1 M 2.057,5.591 L 5.063,5.591 L 5.063,11.884 L 2.057,11.884 L 2.057,5.591 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff1a69b7" Geometry="F1 M 6.156,1.815 L 9.161,1.815 L 9.161,11.884 L 6.156,11.884 L 6.156,1.815 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff959595" Geometry="F1 M 10.255,5.591 L 13.260,5.591 L 13.260,11.884 L 10.255,11.884 L 10.255,5.591 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff434343" Geometry="F1 M 0.000,0.212 L 0.000,14.000 L 13.788,14.000 C 13.905,14.000 14.000,13.905 14.000,13.788 C 14.000,13.671 13.905,13.576 13.788,13.576 L 0.424,13.576 L 0.424,0.212 C 0.424,0.095 0.329,0.000 0.212,0.000 C 0.095,0.000 0.000,0.095 0.000,0.212 Z" />
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="ChartDrawingImage" Drawing="{StaticResource ChartDrawingGroup}" />
+</ResourceDictionary>

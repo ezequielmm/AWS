@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary Source="MainToolbarExport/ToolbarExportAs.xaml"/>
+      <ResourceDictionary Source="MainToolbarExport/ToolbarExportAsCSV.xaml"/>
+      <ResourceDictionary Source="MainToolbarExport/ToolbarExportAsPDF.xaml"/>
+   </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

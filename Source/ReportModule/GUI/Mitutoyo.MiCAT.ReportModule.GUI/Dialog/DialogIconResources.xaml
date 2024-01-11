@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceDictionary>
+         <BitmapImage x:Key="Error" UriSource="error.png"></BitmapImage>
+         <BitmapImage x:Key="Info" UriSource="info.png"></BitmapImage>
+      </ResourceDictionary>
+   </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

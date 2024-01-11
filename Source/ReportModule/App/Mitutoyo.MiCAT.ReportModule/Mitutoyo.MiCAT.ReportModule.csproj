@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
+    <AssemblySearchPaths>$(AssemblySearchPaths);{GAC}</AssemblySearchPaths>
+    <Company>Mitutoyo Europe GmbH</Company>
+    <Authors>Mitutoyo Europe GmbH</Authors>
+    <Product>MiCAT</Product>
+    <Description>Report Module</Description>
+    <PackageTags>ReportModule</PackageTags>
+    <Copyright>Copyright © Mitutoyo 2018</Copyright>
+    <RepositoryUrl>http://euclid.microen.local:8080/tfs/micat/MiCAT/Ocre/_git/Mitutoyo.MiCAT.Reporting</RepositoryUrl>
+    <PackageProjectUrl>http://euclid.microen.local:8080/tfs/MiCAT/</PackageProjectUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <Version>20.0.11</Version>
+    <AssemblyVersion>20.0.0</AssemblyVersion>
+    <FileVersion>20.0.11</FileVersion>
+    <Platforms>x64</Platforms>
+    <PackageId>Mitutoyo.MiCAT.ReportModule</PackageId>
+    <UseWPF>true</UseWPF>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebugType>full</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <Import Project="MsBuildAL1073WarningWorkaround.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Mitutoyo.MiCAT.ReportModule.Domain\Mitutoyo.MiCAT.ReportModule.Domain.csproj" />
+    <ProjectReference Include="..\..\GUI\Mitutoyo.MiCAT.ReportModule.GUI\Mitutoyo.MiCAT.ReportModule.GUI.csproj" />
+    <ProjectReference Include="..\Mitutoyo.MiCAT.ReportModule.App\Mitutoyo.MiCAT.ReportModule.App.csproj" />
+    <ProjectReference Include="..\Mitutoyo.MiCAT.ReportModule.Setup\Mitutoyo.MiCAT.ReportModule.Setup.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Mitutoyo.MiCAT.ApplicationState" Version="11.3.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.ApplicationState.Common" Version="11.3.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.ApplicationState.SnapShots" Version="11.3.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.Common" Version="13.4.2" />
+    <PackageReference Include="Mitutoyo.MiCAT.Core.StdLib" Version="3.0.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.ReportModuleConnector" Version="0.1.0" />
+    <PackageReference Include="Mitutoyo.MiCAT.ShellModule" Version="10.0.2" />
+    <PackageReference Include="Mitutoyo.MiCAT.Style" Version="3.0.1" PrivateAssets="all" />
+    <PackageReference Include="Mitutoyo.MiCAT.Utilities.IoC" Version="7.1.0" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1367" />
+    <PackageReference Include="Prism.Unity" Version="7.2.0.1367" />
+    <PackageReference Include="Prism.WPF" Version="7.2.0.1367" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+    <PackageReference Include="Unity" Version="5.10.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -file &quot;$(ProjectDir)UpdateNuspec.ps1&quot; -projectFile &quot;$(ProjectPath)&quot; -nuspecFile  &quot;$(ProjectDir)$(ProjectName).nuspec&quot;" />
+  </Target>
+</Project>

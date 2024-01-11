@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<DrawingGroup x:Key="MeasurementTableDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Compound Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 9.558,4.048 L 11.682,4.048 L 11.682,2.530 L 9.558,2.530 L 9.558,4.048 Z M 0.000,11.660 L 2.124,11.660 L 2.124,10.141 L 0.000,10.141 L 0.000,11.660 Z M 0.000,9.015 L 2.124,9.015 L 2.124,7.497 L 0.000,7.497 L 0.000,9.015 Z M 9.558,1.518 L 11.682,1.518 L 11.682,0.000 L 9.558,0.000 L 9.558,1.518 Z M 6.372,4.048 L 8.496,4.048 L 8.496,2.530 L 6.372,2.530 L 6.372,4.048 Z M 3.186,1.518 L 5.310,1.518 L 5.310,0.000 L 3.186,0.000 L 3.186,1.518 Z M 6.372,0.000 L 6.372,1.518 L 8.496,1.518 L 8.496,0.000 L 6.372,0.000 Z M 3.186,4.048 L 5.310,4.048 L 5.310,2.530 L 3.186,2.530 L 3.186,4.048 Z M 0.000,4.048 L 2.124,4.048 L 2.124,2.530 L 0.000,2.530 L 0.000,4.048 Z M 0.000,6.579 L 2.124,6.579 L 2.124,5.060 L 0.000,5.060 L 0.000,6.579 Z M 0.000,0.000 L 2.124,0.000 L 2.124,1.518 L 0.000,1.518 L 0.000,0.000 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.186,6.579 L 5.310,6.579 L 5.310,5.060 L 3.186,5.060 L 3.186,6.579 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.186,9.015 L 5.310,9.015 L 5.310,7.497 L 3.186,7.497 L 3.186,9.015 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff989898" Geometry="F1 M 3.186,11.660 L 5.310,11.660 L 5.310,10.141 L 3.186,10.141 L 3.186,11.660 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Geometry="F1 M 11.956,8.159 L 8.828,10.637">
+								<GeometryDrawing.Pen>
+									<Pen DashCap="Flat" Thickness="1.0" Brush="#ff3bb608" MiterLimit="1.0" />
+								</GeometryDrawing.Pen>
+							</GeometryDrawing>
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff3bb608" Geometry="F1 M 12.286,8.806 L 12.669,7.531 L 11.311,7.689 L 12.286,8.806 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Geometry="F1 M 12.555,12.114 L 8.894,10.715">
+								<GeometryDrawing.Pen>
+									<Pen DashCap="Flat" Thickness="1.0" Brush="#ff1877b1" MiterLimit="1.0" />
+								</GeometryDrawing.Pen>
+							</GeometryDrawing>
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff1877b1" Geometry="F1 M 12.284,12.811 L 14.000,12.645 L 12.791,11.395 L 12.284,12.811 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Geometry="F1 M 8.832,5.806 L 8.832,10.761">
+								<GeometryDrawing.Pen>
+									<Pen DashCap="Flat" Thickness="1.0" Brush="#fff30202" MiterLimit="1.0" />
+								</GeometryDrawing.Pen>
+							</GeometryDrawing>
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#fff30202" Geometry="F1 M 9.619,5.833 L 8.832,4.677 L 8.044,5.833 L 9.619,5.833 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff2e3039" Geometry="F1 M 9.287,10.593 C 9.287,10.818 9.106,10.999 8.884,10.999 C 8.660,10.999 8.479,10.818 8.479,10.593 C 8.479,10.371 8.660,10.190 8.884,10.190 C 9.106,10.190 9.287,10.371 9.287,10.593 Z" />
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="MeasurementTableDrawingImage" Drawing="{StaticResource MeasurementTableDrawingGroup}" />
+</ResourceDictionary>

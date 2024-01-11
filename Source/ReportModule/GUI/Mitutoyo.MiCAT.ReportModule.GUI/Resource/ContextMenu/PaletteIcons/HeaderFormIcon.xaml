@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<DrawingGroup x:Key="HeaderFormDrawingGroup">
+		<DrawingGroup.Children>
+			<DrawingGroup>
+				<DrawingGroup.Children>
+					<DrawingGroup>
+						<DrawingGroup.Children>
+							<!-- Layer 1/<Group>/<Compound Path> -->
+							<GeometryDrawing Brush="#ff434343" Geometry="F1 M 9.887,0.000 L 1.148,0.000 C 0.514,0.000 0.000,0.514 0.000,1.147 L 0.000,12.853 C 0.000,13.486 0.514,14.000 1.148,14.000 L 9.887,14.000 C 10.521,14.000 11.035,13.486 11.035,12.853 L 11.035,1.147 C 11.035,0.514 10.521,0.000 9.887,0.000 Z M 9.887,0.438 C 10.279,0.438 10.597,0.756 10.597,1.147 L 10.597,12.853 C 10.597,13.244 10.279,13.563 9.887,13.563 L 1.148,13.563 C 0.756,13.563 0.438,13.244 0.438,12.853 L 0.438,1.147 C 0.438,0.756 0.756,0.438 1.148,0.438 L 9.887,0.438" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff1a69b7" Geometry="F1 M 9.134,4.292 L 1.811,4.292 L 1.811,1.733 L 9.134,1.733 L 9.134,4.292 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff434343" Geometry="F1 M 7.779,8.370 L 2.134,8.370 C 1.957,8.370 1.811,8.515 1.811,8.692 C 1.811,8.870 1.957,9.016 2.134,9.016 L 7.779,9.016 C 7.956,9.016 8.101,8.870 8.101,8.692 C 8.101,8.515 7.956,8.370 7.779,8.370 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff434343" Geometry="F1 M 8.811,10.868 L 2.134,10.868 C 1.957,10.868 1.811,11.013 1.811,11.190 C 1.811,11.368 1.957,11.514 2.134,11.514 L 8.811,11.514 C 8.989,11.514 9.134,11.368 9.134,11.190 C 9.134,11.013 8.989,10.868 8.811,10.868 Z" />
+							<!-- Layer 1/<Group>/<Path> -->
+							<GeometryDrawing Brush="#ff434343" Geometry="F1 M 8.811,5.872 L 2.134,5.872 C 1.957,5.872 1.811,6.017 1.811,6.195 C 1.811,6.373 1.957,6.518 2.134,6.518 L 8.811,6.518 C 8.989,6.518 9.134,6.373 9.134,6.195 C 9.134,6.017 8.989,5.872 8.811,5.872 Z" />
+						</DrawingGroup.Children>
+					</DrawingGroup>
+				</DrawingGroup.Children>
+			</DrawingGroup>
+		</DrawingGroup.Children>
+	</DrawingGroup>
+	<DrawingImage x:Key="HeaderFormDrawingImage" Drawing="{StaticResource HeaderFormDrawingGroup}" />
+</ResourceDictionary>

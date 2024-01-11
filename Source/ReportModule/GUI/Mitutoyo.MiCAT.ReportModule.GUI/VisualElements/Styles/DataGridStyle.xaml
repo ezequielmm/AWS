@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+   <sys:String x:Key="GlyphFilterSmall"></sys:String>
+   <sys:String x:Key="GlyphArrow60Up"></sys:String>
+   <sys:String x:Key="GlyphArrow60Down"></sys:String>
+   
+   <SolidColorBrush x:Key="GridView_PrimaryBrush" Color="#FFE6E6E6"/>
+   <SolidColorBrush x:Key="GridView_MarkerBrush" Color="#FF444444"/>
+   <SolidColorBrush x:Key="GridView_BasicBrush" Color="#FFABABAB"/>
+   <SolidColorBrush x:Key="GridView_AlternativeBrush" Color="#FFF1F1F1"/>
+   <SolidColorBrush x:Key="FilterIconEmptyBrush" Color="#55000000"/>
+
+   <SolidColorBrush x:Key="FailStatusCellColor" Color="#F8D2C9"/>
+   <SolidColorBrush x:Key="InvalidStatusCellColor" Color="#F8D2C9"/>
+   <SolidColorBrush x:Key="PassStatusCellColor" Color="#CAE7DA"/>
+   
+   <FontFamily x:Key="TelerikWebUI">/Telerik.Windows.Controls;component/Themes/Fonts/TelerikWebUI.ttf#TelerikWebUI</FontFamily>
+   
+</ResourceDictionary>
